@@ -31,7 +31,7 @@ const NavbarComponent = () => {
 
   return (
     <nav
-      className={`sticky top-0 w-full left-0 right-0 transition-all duration-500 z-50 ${
+      className={`fixed top-0 w-full left-0 right-0 transition-all duration-500 z-50 ${
         scroll > 0 ? "bg-zinc-200 shadow-xl" : "bg-transparent"
       } backdrop-blur-sm`}
     >
