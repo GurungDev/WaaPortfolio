@@ -1,20 +1,17 @@
-"use client"
+"use client";
 
-import React, { useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Swiper as SwiperType } from 'swiper/types';
-import { Autoplay, FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from "swiper/types";
+import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
 
-
-import Image from 'next/image';
-
-
+import Image from "next/image";
 
 type SlideData = {
   icon: JSX.Element;
   label: string;
   text_color: string;
-  bg_color:string;
+  bg_color: string;
   image: string;
   subpoints: string[];
 };
@@ -34,7 +31,7 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
 
   const onAutoplayTimeLeft = (_: unknown, time: number, progress: number) => {
     if (progressCircle.current) {
-      progressCircle.current.style.setProperty('--progress', `${1 - progress}`);
+      progressCircle.current.style.setProperty("--progress", `${1 - progress}`);
     }
     if (progressContent.current) {
       progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
@@ -43,15 +40,18 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
 
   const progressBarLine = (_: unknown, progress: number) => {
     if (progressLine.current) {
-      progressLine.current.style.setProperty('--progressline', `${1 - progress}`);
+      progressLine.current.style.setProperty(
+        "--progressline",
+        `${1 - progress}`
+      );
     }
   };
 
   return (
-    <div className=''>
-      <div className="w-full h-full flex items-center justify-center md:text-3xl p-9 text-black">
+    <div className=" py-20">
+      <h2 className="w-full h-full font-[700] flex items-center justify-center  p-9 text-black">
         {title}
-      </div>
+      </h2>
       <Swiper
         onSwiper={(swiper) => setThumbsSwiper(swiper)}
         spaceBetween={0}
@@ -59,14 +59,9 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[Autoplay, FreeMode, Navigation, Thumbs]}
-        className="mySwiper cursor-pointer bg-transparent"
+        className="swiper1 mySwiper1 cursor-pointer bg-transparent app-layout "
         style={{
-          height: '15vh',
-          width: '65vw',
-          paddingLeft: '100px',
-          paddingRight: '100px',
-          paddingTop: '10px',
-          paddingBottom: '10px',
+          height: "15vh",
         }}
         autoplay={{
           delay: 5000, // 5 seconds
@@ -76,12 +71,17 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
         onAutoplayTimeLeft={progressBarLine}
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index} className="flex flex-col justify-center items-center relative">
+          <SwiperSlide
+            key={index}
+            className=" flex flex-col justify-center items-center relative"
+          >
             <div className="h-full flex-col w-full justify-center items-center text-center">
-              <p className="text-center flex justify-center items-center">{slide.icon}</p>
+              <p className="text-center flex justify-center items-center">
+                {slide.icon}
+              </p>
               <p className="font-semibold text-black">{slide.label}</p>
               <div className={`progressBar w-0 ${slide.bg_color}`}>
-                <div className='' />
+                <div className="" />
               </div>
             </div>
           </SwiperSlide>
@@ -93,8 +93,8 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
         navigation={false}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[Autoplay, FreeMode, Thumbs]}
-        className="mySwiper2"
-        style={{ height: '80vh', paddingLeft: '100px', paddingRight: '100px', paddingTop: "50px" }}
+        className="swiper1 mySwiper2 "
+    
         autoplay={{
           delay: 5000, // 5 seconds
           disableOnInteraction: false,
@@ -104,21 +104,48 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-          <div className="flex w-full h-full px-6 justify-center items-center space-x-2">
-            <div className="flex flex-col space-y-6 w-1/2 text-left p-8">
-              <div className=''>
-                {slide.subpoints.map((subpoint, subIndex) => (
-                  <div className='p-2' key={subIndex}>
-                    <p className={`${subIndex % 2 === 0 ? `text-2xl font-semibold anton-sc-regular ${slide.text_color}` : ` text-xl mb-3`} text-black`}>{subpoint}</p>
-                  </div>
-                ))}
+            <div className="flex w-full flex-col min-[1100px]:flex-row px-6 justify-center items-center space-x-2">
+              <div className="flex order-2 min-[1100px]:order-1 flex-col space-y-6 min-[1100px]:w-[40%] text-left p-8">
+                <div className="">
+                  {slide.subpoints.map((subpoint, subIndex) => (
+                    <div className="p-2" key={subIndex}>
+                      {subIndex % 2 === 0 ? (
+                        <h5
+                          className={`${
+                            subIndex % 2 === 0
+                              ? ` font-semibold ${slide.text_color}`
+                              : `   mb-3`
+                          } text-black`}
+                        >
+                          {subpoint}
+                        </h5>
+                      ) : (
+                        <p
+                          className={`${
+                            subIndex % 2 === 0
+                              ? ` font-semibold ${slide.text_color}`
+                              : `   mb-3`
+                          } text-black`}
+                        >
+                          {subpoint}
+                        </p>
+                      )}
+                    
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="px-2 order-1 min-[1100px]:order-2 py-4 md:w-[60%] min-[1100px]:w-[30%]">
+                <Image
+                  className="size-80"
+                  src={slide.image}
+                  alt={slide.label}
+                  height={1920}
+                  width={1080}
+                />
               </div>
             </div>
-            <div className="px-2 py-4 h-[500px] w-1/2">
-              <Image className="size-80" src={slide.image} alt={slide.label} height={1920} width={1080} />
-            </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
         ))}
       </Swiper>
     </div>

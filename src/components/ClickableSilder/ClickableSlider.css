@@ -1,12 +1,12 @@
 
  
 
-  .swiper {
+  .swiper1 {
     width: 100%;
     height: 100%;
   }
   
-  .swiper-slide {
+  .swiper-slide1 {
     text-align: center;
     font-size: 18px;
     background: #fff;
@@ -25,7 +25,7 @@
         background-color: #fff;
   }
 
-  .swiper {
+  .swiper1 {
     width: 100%;
     height: 300px;
     margin-left: auto;
@@ -75,20 +75,20 @@
   
 
   
-  .mySwiper {
+  .mySwiper1 {
     height: 20%;
     box-sizing: border-box;
     padding: 10px 0;
   }
   
-  .mySwiper .swiper-slide {
+  .mySwiper1 .swiper-slide {
     width: 10%;
     height: 100%;
     opacity: 0.4;
     transition: opacity 0.3s ease-in 0.2s; /* Adjust the duration (0.3s) and delay (0.2s) as needed */
   }
   
-  .mySwiper .swiper-slide-thumb-active {
+  .mySwiper1 .swiper-slide-thumb-active {
     opacity: 1;
     transition: opacity 0.3s ease-in 0.2s; /* Ensure the same transition settings */
   }
@@ -132,13 +132,21 @@
   }
   
 
-  .mySwiper .progressBar {
+  .mySwiper1 .progressBar {
     width: 0;
- 
     height: 10px;
   }
 
-  .mySwiper .swiper-slide-thumb-active .progressBar {
+  .mySwiper1 .swiper-slide-thumb-active .progressBar {
     width: 100%;
     transition: width 7s ease; 
+  }
+
+  .mySwiper2{
+    height: 70vh;
+   }
+  @media (max-width: 1100px) {
+    .mySwiper2{
+      height: 130vh;
+    }
   }
