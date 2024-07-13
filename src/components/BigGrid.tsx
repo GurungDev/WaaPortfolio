@@ -12,7 +12,7 @@ const BigGrid = () => {
         transition={{ duration: 1 }}
         viewport={{ once: false }}
       >
-        <h2 className=" md:w-full text-white md:flex md:justify-center md:items-center font-black">
+        <h2 className="full text-white flex justify-center items-center font-black">
           How can we help you?
         </h2>
         <div className="tagline pt-7 pb-20 md:text-center md:w-full md:flex md:justify-center md:items-center md:px-48">

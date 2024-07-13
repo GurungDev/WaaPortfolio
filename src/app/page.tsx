@@ -12,6 +12,10 @@ import { IoIosPeople } from "react-icons/io";
 import { LiaGlobeEuropeSolid } from "react-icons/lia";
 import { MdPeopleAlt, MdSell } from "react-icons/md";
 import { RiTeamFill } from "react-icons/ri";
+import { PiStarThin } from "react-icons/pi";
+import { LiaHandsHelpingSolid } from "react-icons/lia";
+import { MdDesignServices } from "react-icons/md";
+import { FaAnglesDown } from "react-icons/fa6";
 
 import {
   HoverCard,
@@ -20,34 +24,22 @@ import {
 } from "@/components/ui/hover-card";
 import { FaGifts, FaHandHoldingHeart } from "react-icons/fa";
 import ServiceSolutions from "@/components/service-solutions";
+import TwoColumnParallax from "@/components/parallaxScroll/Parallaxscroll";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
-
-  const [heroSectionRef, setheroSectionRef] = useState<HTMLElement | null>(
-    null
-  );
-  const [serviceSliderRef, setserviceSliderRef] = useState<HTMLElement | null>(
-    null
-  );
-  const [bigGridRef, setbigGridRef] = useState<HTMLElement | null>(null);
-  const [clickableSliderRef, setclickableSliderRef] =
-    useState<HTMLElement | null>(null);
+  const [heroSectionRef, setHeroSectionRef] = useState<HTMLElement | null>(null);
+  const [serviceSliderRef, setServiceSliderRef] = useState<HTMLElement | null>(null);
+  const [bigGridRef, setBigGriddyRef] = useState<HTMLElement | null>(null);
+  const [teamRef, setTeamRef] = useState<HTMLElement | null>(null);
+  const [clickableSliderRef, setClickableSliderRef] = useState<HTMLElement | null>(null);
+  const [bottomReached, setBottomReached] = useState(false);
 
   const { ref: refHeroSection, inView: inViewHeroSection } = useInView({
     threshold: 0.5,
     onChange: (inView, entry) => {
       if (entry && entry.target instanceof HTMLElement) {
-        setheroSectionRef(entry.target);
-      }
-    },
-  });
-
-  const { ref: refserviceSliderRef, inView: inViewServiceSlider } = useInView({
-    threshold: 0.75,
-    onChange: (inView, entry) => {
-      if (entry && entry.target instanceof HTMLElement) {
-        setserviceSliderRef(entry.target);
+        setHeroSectionRef(entry.target);
       }
       if (inView && entry.target) {
         entry.target.scrollIntoView({ behavior: "smooth" });
@@ -55,30 +47,64 @@ export default function Home() {
     },
   });
 
-  const { ref: refBigGrid, inView: inViewBigGrid } = useInView({
+
+
+  const { ref: refServiceSliderRef, inView: inViewServiceSlider } = useInView({
     threshold: 0.5,
     onChange: (inView, entry) => {
       if (entry && entry.target instanceof HTMLElement) {
-        setbigGridRef(entry.target);
+        setServiceSliderRef(entry.target);
+      }
+      if (inView && entry.target) {
+        entry.target.scrollIntoView({ behavior: "smooth" });
       }
     },
   });
 
-  const { ref: refClickableSliderRef, inView: inViewClickableSlider } =
-    useInView({
-      threshold: 0.5,
+    const { ref: refBigGriddy, inView: inViewBigGrid } = useInView({
+      threshold: 0.1,
       onChange: (inView, entry) => {
         if (entry && entry.target instanceof HTMLElement) {
-          setclickableSliderRef(entry.target);
+          setBigGriddyRef(entry.target);
+        }
+        if (inView && entry.target) {
+          entry.target.scrollIntoView({ behavior: "smooth" });
         }
       },
     });
 
-  const scrollToSection = (ref: HTMLElement | null) => {
-    if (ref) {
-      ref.scrollIntoView({ behavior: "smooth", block: "start" });
+  const { ref: refClickableSliderRef, inView: inViewClickableSlider } = useInView({
+    threshold: 0.5,
+    onChange: (inView, entry) => {
+      if (entry && entry.target instanceof HTMLElement) {
+        setClickableSliderRef(entry.target);
+      }
+      if (inView && entry.target) {
+        entry.target.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+  });
+
+  const { ref: refTeamSection, inView: inViewTeamSection } = useInView({
+    threshold: 0.5,
+    onChange: (inView, entry) => {
+      if (entry && entry.target instanceof HTMLElement) {
+        setTeamRef(entry.target);
+      }
+      if (inView && entry.target) {
+        entry.target.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+  });
+
+  const scrollToSection = (id:string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  
+  
 
   const slides = [
     {
@@ -168,13 +194,25 @@ export default function Home() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+    
   }, []);
+  
+    // Button click handler to scroll to the bottom
+
+    const scrollToBottom = () => {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth",
+      });
+      setBottomReached(true);
+    };
+
   return (
     <main className="flex flex-col w-full h-full">
       <div id="home" ref={refHeroSection}>
         <HeroSectionComponent />
       </div>
-      <div id="services" ref={refserviceSliderRef}>
+      <div id="services" ref={refServiceSliderRef}>
         <ServiceSolutions
           title={"Our Web Technologies Services"}
           slides={[
@@ -223,14 +261,17 @@ export default function Home() {
           ]}
         />
       </div>
-      <div id="package" ref={refBigGrid} className="w-full h-full">
+      <div id="helps" ref={refBigGriddy}>
         <BigGrid />
       </div>
-      <div id="team" ref={refClickableSliderRef} className="h-full w-full bg-white">
+      <div id="benefits" ref={refClickableSliderRef} className="h-full w-full bg-white">
         <ClickablePaginationSlider
           title={"Our Web Technologies Services"}
           slides={slides}
         />
+      </div>
+      <div id="team" ref={refTeamSection} className="w-full">
+        <TwoColumnParallax/>
       </div>
       <div className="flex fixed bottom-0 right-0 mb-16 mr-5 z-[8888] onScreenPageNav">
         <motion.div
@@ -245,56 +286,56 @@ export default function Home() {
             className={`md:text-lg ${
               inViewHeroSection ? "scale-125 text-red-400 font-semibold" : ""
             }`}
-            onClick={() => scrollToSection(heroSectionRef)}
+            onClick={() => scrollToSection("home")}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
-                <MdPeopleAlt size={24} />
+                <PiStarThin size={24} />
               </HoverCardTrigger>
               {/* <HoverCardContent className='md:h-7 md:w-40 flex justify-center items-center bg-black bg-opacity-75 cursor-pointer md:rounded-md md:left-8 md:mr-1'>
                   Hero Section
               </HoverCardContent> */}
             </HoverCard>
           </button>
-          <button
+          <div
             className={`md:text-lg ${
-              inViewServiceSlider
-                ? "scale-125 text-green-400 font-semibold"
-                : ""
+              inViewServiceSlider ? "scale-125 text-yellow-400 font-semibold" : ""
             }`}
-            onClick={() => scrollToSection(serviceSliderRef)}
+            onClick={() => scrollToSection("services")}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
-                <FaGifts size={24} />
+                <MdDesignServices size={24} />
               </HoverCardTrigger>
               {/* <HoverCardContent className='md:h-7 md:w-40 flex justify-center items-center bg-black bg-opacity-75 cursor-pointer md:rounded-md md:left-8 md:mr-1'>
-                  Benefits
+                  Hero Section
               </HoverCardContent> */}
             </HoverCard>
-          </button>
+          </div>
+
           <button
             className={`md:text-lg ${
-              inViewBigGrid ? "scale-125 text-teal-400  font-semibold" : ""
+              inViewBigGrid ? "scale-125 text-rose-400 font-semibold" : ""
             }`}
-            onClick={() => scrollToSection(bigGridRef)}
+            onClick={() => scrollToSection("helps")}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
-                <MdPeopleAlt size={24} />
+                <LiaHandsHelpingSolid size={24} />
               </HoverCardTrigger>
               {/* <HoverCardContent className='md:h-7 md:w-40 flex justify-center items-center bg-black bg-opacity-75 cursor-pointer md:rounded-md md:left-8 md:mr-1'>
-                  Customers
+                  Hero Section
               </HoverCardContent> */}
             </HoverCard>
           </button>
+
           <button
             className={`md:text-lg ${
               inViewClickableSlider
                 ? "scale-125 text-sky-400 font-semibold"
                 : ""
             }`}
-            onClick={() => scrollToSection(clickableSliderRef)}
+            onClick={() => scrollToSection("benefits")}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
@@ -305,6 +346,35 @@ export default function Home() {
               </HoverCardContent> */}
             </HoverCard>
           </button>
+          <button
+            className={`md:text-lg ${
+              inViewTeamSection ? "scale-125 text-green-400 font-semibold" : ""
+            }`}
+            onClick={() => scrollToSection("team")}
+          >
+            <HoverCard>
+              <HoverCardTrigger className="cursor-pointer hover:scale-105">
+                <MdPeopleAlt  size={24} />
+              </HoverCardTrigger>
+              {/* <HoverCardContent className='md:h-7 md:w-40 flex justify-center items-center bg-black bg-opacity-75 cursor-pointer md:rounded-md md:left-8 md:mr-1'>
+                  Benefits
+              </HoverCardContent> */}
+            </HoverCard>
+          </button>
+
+          {/* <button
+            className={`md:text-lg ${
+              bottomReached ? "scale-125 text-teal-400 font-semibold" : ""
+            }`}
+            onClick={scrollToBottom}
+          >
+            <HoverCard>
+              <HoverCardTrigger className="cursor-pointer hover:scale-105">
+                <FaGifts size={24} />
+              </HoverCardTrigger>
+            </HoverCard>
+          </button> */}
+
         </motion.div>
       </div>
     </main>
