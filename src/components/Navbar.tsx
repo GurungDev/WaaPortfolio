@@ -44,11 +44,19 @@ const NavbarComponent = () => {
             scroll > 0 ? "text-neutral-800" : "text-white"
           }`}
         >
-          <p className="caption font-[200] tracking-loose leading-[1.2rem]">Home</p>
-          <p className="caption font-[200] tracking-loose leading-[1.2rem]">Services</p>
-          <p className="caption font-[200] tracking-loose leading-[1.2rem]">Pricing</p>
-          <p className="caption font-[200] tracking-loose leading-[1.2rem]">Our Team</p>
-          <p className="caption font-[200] tracking-loose leading-[1.2rem]">Contact Us</p>
+          <p className="caption font-[200] tracking-loose leading-[1.2rem]">
+            Home
+          </p>
+          <p className="caption font-[200] tracking-loose leading-[1.2rem]">
+            Services
+          </p>
+
+          <p className="caption font-[200] tracking-loose leading-[1.2rem]">
+            Our Team
+          </p>
+          <p className="caption font-[200] tracking-loose leading-[1.2rem]">
+            Contact Us
+          </p>
         </div>
         <div
           className={`flex gap-3 ${

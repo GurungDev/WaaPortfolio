@@ -19,8 +19,8 @@ const HeroSectionComponent = () => {
         />
       </div>
       {/* Dark overlay */}
-      <div className="w-[70%] text-white">
-        <h1 className="text-9xl bg-gradient-to-r from-blue-500 via-blue-100 to-neutral-100 bg-clip-text text-transparent font-[800] mb-10  ">
+      <div className="w-[90%] md:w-[70%] text-white">
+        <h1 className="text-3xl lg:text-6xl min-[1900px]:text-9xl bg-gradient-to-r from-blue-500 via-blue-100 to-neutral-100 bg-clip-text text-transparent font-[800] mb-10  ">
           YOUR BEST IT PARTNERS
         </h1>
 
@@ -47,7 +47,7 @@ const HeroSectionComponent = () => {
         </button> */}
         <button className="button duration-300 group hover:bg-transparent relative my-7">
           <div className="flex items-center justify-between">
-            <span className="group small">Why Chose us?</span>
+            <p className="">Why Chose us?</p>
             <BsArrowRightShort className="text-[1.5em]  group-hover:translate-x-[10px]  duration-300 " />
           </div>
           <div className="absolute inset-0 star-1">
