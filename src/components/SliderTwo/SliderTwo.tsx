@@ -3,11 +3,7 @@ import React from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
-import './SlideTwo.css';
 
 import { Pagination, Navigation, HashNavigation } from 'swiper/modules';
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';

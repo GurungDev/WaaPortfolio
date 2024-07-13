@@ -1,29 +1,5 @@
 
-
-@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Caveat:wght@400..700&display=swap');
-
-.anton-sc-regular {
-  font-family: "Anton SC", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-.caveat-header {
-  font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.caveat-banner {
-  font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
+ 
 
   .swiper {
     width: 100%;

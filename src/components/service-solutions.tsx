@@ -41,6 +41,8 @@ export default function ServiceSolutions({ slides, title }: Props) {
       </div>
       <div className="relative py-8   mx-2">
         <Swiper
+          id="slider1"
+          className="slider6"
           loop={loop}
           preventClicks={false}
           centeredSlides

@@ -1,4 +1,3 @@
-"use client"
 import BigGrid from "@/components/BigGrid";
 import ClickablePaginationSlider from "@/components/ClickableSilder/ClickableSlider";
 import HeroSectionComponent from "@/components/HeroSection";
@@ -16,7 +15,7 @@ export default function Home() {
       icon: <MdSell className="text-3xl text-green-400" />,
       label: "Sales",
       text_color: "text-green-400",
-      image: "/assets/img/sales.jpg",
+      image: "/p1.jpg",
       subpoints: [
         "Drive more revenue",
         "Quickly book time to solve customers’ needs and help them self-serve to support their goals.",
@@ -30,7 +29,7 @@ export default function Home() {
       icon: <FaCartShopping className="text-3xl text-blue-400" />,
       label: "Marketing",
       text_color: "text-blue-400",
-      image: "/assets/img/marketing.avif",
+      image: "/p1.jpg",
       subpoints: [
         "Drive more revenue",
         "Quickly book time to solve customers’ needs and help them self-serve to support their goals.",
@@ -44,7 +43,7 @@ export default function Home() {
       icon: <IoIosPeople className="text-3xl text-red-500" />,
       label: "Customer Hope",
       text_color: "text-red-400",
-      image: "/assets/img/hope.jpg",
+      image: "/p1.jpg",
       subpoints: [
         "Drive more revenue",
         "Quickly book time to solve customers’ needs and help them self-serve to support their goals.",
@@ -58,7 +57,7 @@ export default function Home() {
       icon: <LiaGlobeEuropeSolid className="text-3xl text-green-900" />,
       label: "Networks",
       text_color: "text-green-800",
-      image: "/assets/img/network.webp",
+      image: "/p1.jpg",
       subpoints: [
         "Drive more revenue",
         "Quickly book time to solve customers’ needs and help them self-serve to support their goals.",
@@ -72,7 +71,7 @@ export default function Home() {
       icon: <RiTeamFill className="text-3xl text-black" />,
       label: "Teams",
       text_color: "text-black",
-      image: "/assets/img/teams.jpg",
+      image: "/p1.jpg",
       subpoints: [
         "Drive more revenue",
         "Speed up your sales cycle",
@@ -90,7 +89,7 @@ export default function Home() {
         <HeroSectionComponent />
       </div>
       <div>
-        <SlideTwo
+        <ServiceSolutions
           title={"Our Web Technologies Services"}
           slides={[
             {
@@ -142,10 +141,10 @@ export default function Home() {
             <BigGrid/>
       </div>
       <div className="h-full w-full bg-white">
-      <ClickablePaginationSlider
+      {/* <ClickablePaginationSlider
       title={"Our Web Technologies Services"}
       slides={slides}
-    />
+    /> */}
       </div>
     </main>
   );

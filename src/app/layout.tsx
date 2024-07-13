@@ -5,6 +5,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-creative";
+import 'swiper/css/free-mode';
+import 'swiper/css/thumbs';
+import '@/components/ClickableSilder/ClickableSlider.css';
 import NavbarComponent from "@/components/Navbar";
 import Footer from "@/components/Footer";
  

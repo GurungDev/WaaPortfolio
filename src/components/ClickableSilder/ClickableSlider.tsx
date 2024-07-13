@@ -5,14 +5,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper/types';
 import { Autoplay, FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
 
 import Image from 'next/image';
 
-import './ClickableSlider.css';
+
 
 type SlideData = {
   icon: JSX.Element;
