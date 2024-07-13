@@ -28,7 +28,7 @@ const BigGrid = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: false }}
-          className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8"
+          className="grid gird-cols-1 p-9 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8"
         >
           <BigGirdComponent
             imageSrc="/assets/img/ai.png"

@@ -50,7 +50,7 @@ const NavbarComponent = () => {
           {[
             { href: "#home", label: "Home", color: "red-400" },
             { href: "#services", label: "Services", color: "green-400" },
-            { href: "#package", label: "Packages", color: "green-400" },
+            { href: "#package", label: "Packages", color: "purple-400" },
             { href: "#team", label: "Our Team", color: "blue-400" },
             { href: "#contact_us", label: "Contact Us", color: "yellow-400" },
           ].map((link) => (
@@ -62,7 +62,7 @@ const NavbarComponent = () => {
             >
               <p>{link.label}</p>
               <div
-                className={`linkProgressBar h-2 transition-all duration-500 ease-in ${
+                className={`linkProgressBar h-1 transition-all duration-500 ease-in ${
                   activeLink === link.href ? `w-full bg-${link.color}` : "w-0"
                 }`}
               />

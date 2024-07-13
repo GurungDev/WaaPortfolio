@@ -39,7 +39,7 @@ const Footer = () => {
               </Link>
             </div>
             <div className="flex flex-col space-y-2">
-              <h5 className="font-bold">Servives</h5>
+              <h5 className="font-bold">Services</h5>
               <Link className="" href="">
                 Generative AI Web Apps
               </Link>
