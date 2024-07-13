@@ -38,7 +38,7 @@ export default function SlideTwo({ slides, title }: Props) {
      className="pt-14 ">
       <div className="app-layout">
         <div className="p-4  ">
-          <h1 className="secondary-title font-medium py-2 pb-5 text-center text-white">
+          <h1 className="secondary-title font-medium py-2 pb-5 text-center text-black">
             {title}
           </h1>
         </div>

@@ -157,16 +157,11 @@
   
 
   .mySwiper .progressBar {
-
-    height: 10px;
-  }
-  
-  .mySwiper .progressBar{
     width: 0;
  
+    height: 10px;
   }
 
-    
   .mySwiper .swiper-slide-thumb-active .progressBar {
     width: 100%;
     transition: width 7s ease; 

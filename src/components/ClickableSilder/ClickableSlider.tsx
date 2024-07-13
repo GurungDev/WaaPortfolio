@@ -18,6 +18,7 @@ type SlideData = {
   icon: JSX.Element;
   label: string;
   text_color: string;
+  bg_color:string;
   image: string;
   subpoints: string[];
 };
@@ -83,7 +84,7 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
             <div className="h-full flex-col w-full justify-center items-center text-center">
               <p className="text-center flex justify-center items-center">{slide.icon}</p>
               <p className="font-semibold text-black">{slide.label}</p>
-              <div className={`progressBar w-0 ${slide.text_color}`}>
+              <div className={`progressBar w-0 ${slide.bg_color}`}>
                 <div className='' />
               </div>
             </div>
