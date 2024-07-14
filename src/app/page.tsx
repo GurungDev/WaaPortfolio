@@ -6,7 +6,7 @@ import SlideTwo from "@/components/SliderTwo/SliderTwo";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-
+import { BiSolidPackage } from "react-icons/bi";
 import { FaCartShopping } from "react-icons/fa6";
 import { IoIosPeople } from "react-icons/io";
 import { LiaGlobeEuropeSolid } from "react-icons/lia";
@@ -108,22 +108,22 @@ export default function Home() {
 
   const slides = [
     {
-      icon: <MdSell className="text-3xl text-green-400" />,
-      label: "Sales",
+      icon: <BiSolidPackage size={25} className="text-3xl text-green-400" />,
+      label: "Basic",
       text_color: "text-green-400",
       bg_color: "bg-green-400",
       image: "/assets/img/sales.jpg",
       subpoints: [
-        "Drive more revenue",
-        "Quickly book time to solve customers’ needs and help them self-serve to support their goals.",
-        "Speed up your sales cycle",
-        "Keep your deal momentum high and remove scheduling friction at every stage of your sales cycle.",
-        "Close more deals",
-        "Change the way you schedule meetings to increase customer satisfaction and keep engagement high with reminder and follow-up workflows.",
+        "Description: ",
+        "A static website suitable for showcasing information.",
+        "Features:",
+        "- 3-5 pages or a single landing page.",
+        "- Responsive design ensuring the website looks good on all devices.",
+        "- Basic SEO optimization.",
       ],
     },
     {
-      icon: <FaCartShopping className="text-3xl text-blue-400" />,
+      icon: <BiSolidPackage size={33} className="text-3xl text-blue-400" />,
       label: "Marketing",
       text_color: "text-blue-400",
       bg_color: "bg-blue-400",
@@ -138,7 +138,7 @@ export default function Home() {
       ],
     },
     {
-      icon: <IoIosPeople className="text-3xl text-red-500" />,
+      icon: <BiSolidPackage size={38} className="text-3xl text-red-500" />,
       label: "Customer Hope",
       text_color: "text-red-400",
       bg_color: "bg-red-400",
@@ -153,7 +153,7 @@ export default function Home() {
       ],
     },
     {
-      icon: <LiaGlobeEuropeSolid className="text-3xl text-green-900" />,
+      icon: <BiSolidPackage size={43} className="text-3xl text-green-900" />,
       label: "Networks",
       text_color: "text-green-800",
       bg_color: "bg-green-800",
@@ -168,7 +168,7 @@ export default function Home() {
       ],
     },
     {
-      icon: <RiTeamFill className="text-3xl text-black" />,
+      icon: <BiSolidPackage size={48} className="text-3xl text-black" />,
       label: "Teams",
       text_color: "text-black",
       bg_color: "bg-black",
@@ -225,6 +225,13 @@ export default function Home() {
             },
             {
               image: "/assets/img/ai.png",
+              title: "Custom Software Development",
+              bg: "bg-blue-400",
+              description:
+                "We provide custom software development, integration, and support, ensuring secure and scalable solutions tailored to your needs.",
+            },
+            {
+              image: "/assets/img/ai.png",
               title: "UX/UI Design",
               bg: "bg-green-400",
               description:
@@ -266,7 +273,7 @@ export default function Home() {
       </div>
       <div id="benefits" ref={refClickableSliderRef} className="h-full w-full bg-white">
         <ClickablePaginationSlider
-          title={"Our Web Technologies Services"}
+          title={"Our Web Packages"}
           slides={slides}
         />
       </div>
