@@ -110,7 +110,7 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
                   {slide.subpoints.map((subpoint, subIndex) => (
                     <div className="p-2" key={subIndex}>
                       {subIndex == 0 || subIndex == 2 ? (
-                        <h3
+                        <h4
                           className={`${
                             subIndex == 0 || subIndex == 2
                               ? ` font-semibold ${slide.text_color}`
@@ -118,7 +118,7 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
                           } text-black`}
                         >
                           {subpoint}
-                        </h3>
+                        </h4>
                       ) : (
                         <p className="text-black">{subpoint}</p>
                       )}

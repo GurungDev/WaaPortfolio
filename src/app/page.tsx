@@ -17,7 +17,6 @@ import { LiaHandsHelpingSolid } from "react-icons/lia";
 import { MdDesignServices } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 
-
 import {
   HoverCard,
   HoverCardContent,
@@ -32,13 +31,16 @@ import Contact_us from "@/components/contact_us/Contact_us";
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const [heroSectionRef, setHeroSectionRef] = useState<HTMLElement | null>(null);
-  const [serviceSliderRef, setServiceSliderRef] = useState<HTMLElement | null>(null);
+  const [heroSectionRef, setHeroSectionRef] = useState<HTMLElement | null>(
+    null
+  );
+  const [serviceSliderRef, setServiceSliderRef] = useState<HTMLElement | null>(
+    null
+  );
   const [bigGridRef, setBigGriddyRef] = useState<HTMLElement | null>(null);
   const [contactRef, setContactRef] = useState<HTMLElement | null>(null);
   const [clickableSliderRef, setClickableSliderRef] =
     useState<HTMLElement | null>(null);
-
 
   const { ref: refHeroSection, inView: inViewHeroSection } = useInView({
     threshold: 0.5,
@@ -55,28 +57,27 @@ export default function Home() {
       if (entry && entry.target instanceof HTMLElement) {
         setServiceSliderRef(entry.target);
       }
-
     },
   });
 
-    const { ref: refBigGriddy, inView: inViewBigGrid } = useInView({
-      threshold: 0.1,
-      onChange: (inView, entry) => {
-        if (entry && entry.target instanceof HTMLElement) {
-          setBigGriddyRef(entry.target);
-        }
-
-      },
-    });
-
-  const { ref: refClickableSliderRef, inView: inViewClickableSlider } = useInView({
-    threshold: 0.5,
+  const { ref: refBigGriddy, inView: inViewBigGrid } = useInView({
+    threshold: 0.1,
     onChange: (inView, entry) => {
       if (entry && entry.target instanceof HTMLElement) {
-        setClickableSliderRef(entry.target);
+        setBigGriddyRef(entry.target);
       }
     },
   });
+
+  const { ref: refClickableSliderRef, inView: inViewClickableSlider } =
+    useInView({
+      threshold: 0.5,
+      onChange: (inView, entry) => {
+        if (entry && entry.target instanceof HTMLElement) {
+          setClickableSliderRef(entry.target);
+        }
+      },
+    });
 
   const { ref: refContactSection, inView: inViewTeamSection } = useInView({
     threshold: 0.5,
@@ -203,18 +204,18 @@ export default function Home() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <main className="flex flex-col w-full h-full">
-      {/* <div id="home" ref={refHeroSection}>
+      <div id="home" ref={refHeroSection}>
         <HeroSectionComponent />
-      </div> */}
+      </div>
       <div className="w-full h-full" id="services" ref={refServiceSliderRef}>
         <ServiceSolutions
           title={"Our Web Technologies Services"}
@@ -271,42 +272,46 @@ export default function Home() {
           ]}
         />
       </div>
-      <div className="w-full h-full"  id="helps" ref={refBigGriddy}>
+      <div className="w-full h-full" id="helps" ref={refBigGriddy}>
         <BigGrid />
       </div>
-      <div className="h-full w-full bg-white" id="benefits" ref={refClickableSliderRef} >
-        <ClickablePaginationSlider
-          title={"Our Web Packages"}
-          slides={slides}
-        />
+      <div
+        className="h-full w-full bg-white"
+        id="benefits"
+        ref={refClickableSliderRef}
+      >
+        <ClickablePaginationSlider title={"Our Web Packages"} slides={slides} />
       </div>
-      <div  className="w-full h-screen"  id="team"  >
-        <div className="w-full h-full flex py-10 px-20">
-            <div className="w-1/2 flex  justify-center items-center">
-            <div className='md:w-44 md:flex md:flex-col hidden'>
-              <Image 
-                className='w-full h-auto' // Ensure the image takes full width and adjusts height automatically
-                src="/assets/img/men.webp" 
-                alt="CEO" 
-                height={900} 
-                width={800} 
-                priority
-              />
-              <p className="text-center">CEO</p>
-            </div>
-            </div>
-            <div className="w-1/2 flex  justify-center items-center h-full">
-            <div className={` bg-black bg-opacity-30 flex flex-col px-4 space-y-2 rounded-lg md:h-80`}>
-              <h2 className='text-white text-center'>Thakur Singh Gurung</h2> 
-              <p className='text-center w-full h-full '>
-              Thakur Singh Gurung, as the CEO, exemplifies visionary leadership and strategic acumen, steering the company towards sustainable growth and innovation. With a profound commitment to excellence, he ensures the organization&apos;s goals align with its long-term mission and values. Thakur Singh Gurung&apos;s dedication to fostering strong relationships with stakeholders and his ability to inspire and lead his team are key to the company&apos;s continued success.
-              </p>
+      <div className="" id="team">
+        <div className="app-layout flex items-center justify-between py-20 gap-10">
+          <div className="  w-[40%] flex item-center flex-col">
+            <Image
+              className="w-[250px] m-auto h-auto rounded-md my-5" // Ensure the image takes full width and adjusts height automatically
+              src="/ane.jpeg"
+              alt="CEO"
+              height={900}
+              width={800}
+              priority
+            />
+            <p className="text-center">Marketing Manager</p>
           </div>
-            </div>
+          <div className="  w-[60%]  bg-black bg-opacity-30 px-4 space-y-2 py-14 rounded-lg">
+            <h2 className="text-white text-center">Annette Krafczyk</h2>
+            <p className="text-center w-full h-full ">
+              Thakur Singh Gurung, as the CEO, exemplifies visionary leadership
+              and strategic acumen, steering the company towards sustainable
+              growth and innovation. With a profound commitment to excellence,
+              he ensures the organization&apos;s goals align with its long-term
+              mission and values. Thakur Singh Gurung&apos;s dedication to
+              fostering strong relationships with stakeholders and his ability
+              to inspire and lead his team are key to the company&apos;s
+              continued success.
+            </p>
+          </div>
         </div>
       </div>
       <div id="contact" ref={refContactSection} className="w-full h-full">
-          <Contact_us/>
+        <Contact_us />
       </div>
       <div className="flex fixed bottom-0 right-0 mb-16 mr-5 z-[8888] onScreenPageNav">
         <motion.div
@@ -391,7 +396,7 @@ export default function Home() {
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
-                <FaPhoneAlt  size={24} />
+                <FaPhoneAlt size={24} />
               </HoverCardTrigger>
               {/* <HoverCardContent className='md:h-7 md:w-40 flex justify-center items-center bg-black bg-opacity-75 cursor-pointer md:rounded-md md:left-8 md:mr-1'>
                   Benefits

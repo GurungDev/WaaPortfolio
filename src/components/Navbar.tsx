@@ -58,9 +58,9 @@ const NavbarComponent = () => {
           {[
             { href: "#home", label: "Home", color: "red-400" },
             { href: "#services", label: "Services", color: "green-400" },
-            { href: "#package", label: "Packages", color: "purple-400" },
-            { href: "#team", label: "Our Team", color: "blue-400" },
-            { href: "#contact_us", label: "Contact Us", color: "yellow-400" },
+            { href: "#helps", label: "Technologies", color: "pink-400" },
+            { href: "#benefits", label: "Packages", color: "purple-400" },
+            { href: "#contact", label: "Contact Us", color: "yellow-400" },
           ].map((link) => (
             <Link
               href={link.href}
@@ -83,17 +83,17 @@ const NavbarComponent = () => {
             scroll > 0 || isNotHomePage ? "text-neutral-700" : "text-white"
           }`}
         >
-          <Link href="https://wa.me/message/S4GEVFXDYT7UO1">
+          <Link href="#">
             <FaWhatsapp size={24} />
           </Link>
-          <Link href="mailto:akrafczyk@outlook.com">
+          <Link href="mailto:gurungngr@gmail.com">
             <IoMailOpenOutline size={24} />
           </Link>
 
-          <Link href="https://www.instagram.com/an_nett_i?igsh=MXBmdGQyMWU5M2MxZw%3D%3D&utm_source=qr">
+          <Link href="#">
             <FaInstagram size={24} />
           </Link>
-          <Link href="https://www.tiktok.com/@annetti75?_t=8nsSBi5MrUe&_r=1">
+          <Link href="#">
             <FaTiktok size={24} />
           </Link>
         </div>
