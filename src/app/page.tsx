@@ -15,6 +15,8 @@ import { RiTeamFill } from "react-icons/ri";
 import { PiStarThin } from "react-icons/pi";
 import { LiaHandsHelpingSolid } from "react-icons/lia";
 import { MdDesignServices } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
+
 
 import {
   HoverCard,
@@ -24,6 +26,8 @@ import {
 import { FaGifts, FaHandHoldingHeart } from "react-icons/fa";
 import ServiceSolutions from "@/components/service-solutions";
 import TwoColumnParallax from "@/components/parallaxScroll/Parallaxscroll";
+import Image from "next/image";
+import Contact_us from "@/components/contact_us/Contact_us";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +35,7 @@ export default function Home() {
   const [heroSectionRef, setHeroSectionRef] = useState<HTMLElement | null>(null);
   const [serviceSliderRef, setServiceSliderRef] = useState<HTMLElement | null>(null);
   const [bigGridRef, setBigGriddyRef] = useState<HTMLElement | null>(null);
-  const [teamRef, setTeamRef] = useState<HTMLElement | null>(null);
+  const [contactRef, setContactRef] = useState<HTMLElement | null>(null);
   const [clickableSliderRef, setClickableSliderRef] = useState<HTMLElement | null>(null);
 
 
@@ -75,11 +79,11 @@ export default function Home() {
     },
   });
 
-  const { ref: refTeamSection, inView: inViewTeamSection } = useInView({
+  const { ref: refContactSection, inView: inViewTeamSection } = useInView({
     threshold: 0.5,
     onChange: (inView, entry) => {
       if (entry && entry.target instanceof HTMLElement) {
-        setTeamRef(entry.target);
+        setContactRef(entry.target);
       }
     },
   });
@@ -188,9 +192,9 @@ export default function Home() {
 
   return (
     <main className="flex flex-col w-full h-full">
-      <div id="home" ref={refHeroSection}>
+      {/* <div id="home" ref={refHeroSection}>
         <HeroSectionComponent />
-      </div>
+      </div> */}
       <div className="w-full h-full" id="services" ref={refServiceSliderRef}>
         <ServiceSolutions
           title={"Our Web Technologies Services"}
@@ -256,8 +260,33 @@ export default function Home() {
           slides={slides}
         />
       </div>
-      <div  className="w-full h-full"  id="team" ref={refTeamSection} >
-        <TwoColumnParallax/>
+      <div  className="w-full h-screen"  id="team"  >
+        <div className="w-full h-full flex py-10 px-20">
+            <div className="w-1/2 flex  justify-center items-center">
+            <div className='md:w-44 md:flex md:flex-col hidden'>
+              <Image 
+                className='w-full h-auto' // Ensure the image takes full width and adjusts height automatically
+                src="/assets/img/men.webp" 
+                alt="CEO" 
+                height={900} 
+                width={800} 
+                priority
+              />
+              <p className="text-center">CEO</p>
+            </div>
+            </div>
+            <div className="w-1/2 flex  justify-center items-center h-full">
+            <div className={` bg-black bg-opacity-30 flex flex-col px-4 space-y-2 rounded-lg md:h-80`}>
+              <h2 className='text-white text-center'>Thakur Singh Gurung</h2> 
+              <p className='text-center w-full h-full '>
+              Thakur Singh Gurung, as the CEO, exemplifies visionary leadership and strategic acumen, steering the company towards sustainable growth and innovation. With a profound commitment to excellence, he ensures the organization&apos;s goals align with its long-term mission and values. Thakur Singh Gurung&apos;s dedication to fostering strong relationships with stakeholders and his ability to inspire and lead his team are key to the company&apos;s continued success.
+              </p>
+          </div>
+            </div>
+        </div>
+      </div>
+      <div id="contact" ref={refContactSection} className="w-full h-full">
+          <Contact_us/>
       </div>
       <div className="flex fixed bottom-0 right-0 mb-16 mr-5 z-[8888] onScreenPageNav">
         <motion.div
@@ -336,11 +365,11 @@ export default function Home() {
             className={`md:text-lg ${
               inViewTeamSection ? "scale-125 text-green-400 font-semibold" : ""
             }`}
-            onClick={() => scrollToSection(teamRef)}
+            onClick={() => scrollToSection(contactRef)}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
-                <MdPeopleAlt  size={24} />
+                <FaPhoneAlt  size={24} />
               </HoverCardTrigger>
               {/* <HoverCardContent className='md:h-7 md:w-40 flex justify-center items-center bg-black bg-opacity-75 cursor-pointer md:rounded-md md:left-8 md:mr-1'>
                   Benefits

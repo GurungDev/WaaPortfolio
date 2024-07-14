@@ -46,11 +46,13 @@ const NavbarComponent = () => {
             scroll > 0 || isNotHomePage ? "text-neutral-700" : "text-white"
           }`}
         >
-          Waa Tech Ltd.
+          <Link href="/">Waa Tech Ltd.</Link>
+          
         </h4>
+
         <div
           className={`hidden min-[1100px]:flex gap-5 ${
-            scroll > 0 || isNotHomePage ? "text-neutral-800" : "text-white"
+            scroll > 0 || isNotHomePage ? "text-neutral-800 " : "text-white "
           }`}
         >
           {[
@@ -63,7 +65,7 @@ const NavbarComponent = () => {
             <Link
               href={link.href}
               key={link.href}
-              className="caption font-[200] tracking-loose leading-[1.2rem]"
+              className={` ${isNotHomePage ? "hidden" : "caption font-[200] tracking-loose leading-[1.2rem]" } `}
               onClick={() => setActiveLink(link.href)}
             >
               <p>{link.label}</p>
@@ -75,6 +77,7 @@ const NavbarComponent = () => {
             </Link>
           ))}
         </div>
+
         <div
           className={`flex gap-3 ${
             scroll > 0 || isNotHomePage ? "text-neutral-700" : "text-white"
