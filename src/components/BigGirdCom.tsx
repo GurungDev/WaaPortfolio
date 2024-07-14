@@ -19,7 +19,7 @@ const BigGirdComponent: React.FC<BigGirdComponentProps> = ({ imageSrc, imageAlt,
         {description}
       </p>
       <div className='size-40'>
-        <Image src={imageSrc} alt={imageAlt} height={900} width={900} />
+        <Image src={imageSrc} alt={imageAlt} height={900} width={900} priority />
       </div>
     </div>
   );

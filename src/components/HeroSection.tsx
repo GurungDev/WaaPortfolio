@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { BsArrowRightShort } from "react-icons/bs";
 import Typewriter from "typewriter-effect";
@@ -19,27 +20,18 @@ const HeroSectionComponent = () => {
             YOUR BEST IT PARTNERS
           </h1>
 
-          <Typewriter
-            onInit={(typewriter) => {
-              typewriter
-                .typeString(
-                  "We are dedicated to providing top-notch IT solutions tailored to meet your business needs. Our team of experts is committed to delivering innovative and reliable services that drive success."
-                )
-                .pauseFor(2500)
-                .deleteAll()
-                .start()
-                .callFunction(() => {
-                  typewriter.start(); // Restart the typing effect
-                });
-            }}
-          
-          />
+          <p>
+            {" "}
+            We are dedicated to providing top-notch IT solutions tailored to
+            meet your business needs. Our team of experts is committed to
+            delivering innovative and reliable services that drive success.
+          </p>
 
           <button className="button duration-300 group hover:bg-transparent relative my-7">
-            <div className="flex items-center justify-between">
-              <p className="">Why Chose us?</p>
+            <Link href={"/#contact"} className="flex items-center justify-between">
+              <p className="">Get in touch</p>
               <BsArrowRightShort className="text-[1.5em]  group-hover:translate-x-[10px]  duration-300 " />
-            </div>
+            </Link>
             <div className="absolute inset-0 star-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +167,6 @@ const HeroSectionComponent = () => {
           </button>
         </div>
       </div>
-     
     </div>
   );
 };

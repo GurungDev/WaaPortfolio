@@ -15,7 +15,7 @@ import { RiTeamFill } from "react-icons/ri";
 import { PiStarThin } from "react-icons/pi";
 import { LiaHandsHelpingSolid } from "react-icons/lia";
 import { MdDesignServices } from "react-icons/md";
-import { FaAnglesDown } from "react-icons/fa6";
+import { FaPhoneAlt } from "react-icons/fa";
 
 import {
   HoverCard,
@@ -25,9 +25,12 @@ import {
 import { FaGifts, FaHandHoldingHeart } from "react-icons/fa";
 import ServiceSolutions from "@/components/service-solutions";
 import TwoColumnParallax from "@/components/parallaxScroll/Parallaxscroll";
+import Image from "next/image";
+import Contact_us from "@/components/contact_us/Contact_us";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+
   const [heroSectionRef, setHeroSectionRef] = useState<HTMLElement | null>(
     null
   );
@@ -35,19 +38,15 @@ export default function Home() {
     null
   );
   const [bigGridRef, setBigGriddyRef] = useState<HTMLElement | null>(null);
-  const [teamRef, setTeamRef] = useState<HTMLElement | null>(null);
+  const [contactRef, setContactRef] = useState<HTMLElement | null>(null);
   const [clickableSliderRef, setClickableSliderRef] =
     useState<HTMLElement | null>(null);
-  const [bottomReached, setBottomReached] = useState(false);
 
   const { ref: refHeroSection, inView: inViewHeroSection } = useInView({
     threshold: 0.5,
     onChange: (inView, entry) => {
       if (entry && entry.target instanceof HTMLElement) {
         setHeroSectionRef(entry.target);
-      }
-      if (inView && entry.target) {
-        entry.target.scrollIntoView({ behavior: "smooth" });
       }
     },
   });
@@ -58,9 +57,6 @@ export default function Home() {
       if (entry && entry.target instanceof HTMLElement) {
         setServiceSliderRef(entry.target);
       }
-      if (inView && entry.target) {
-        entry.target.scrollIntoView({ behavior: "smooth" });
-      }
     },
   });
 
@@ -69,9 +65,6 @@ export default function Home() {
     onChange: (inView, entry) => {
       if (entry && entry.target instanceof HTMLElement) {
         setBigGriddyRef(entry.target);
-      }
-      if (inView && entry.target) {
-        entry.target.scrollIntoView({ behavior: "smooth" });
       }
     },
   });
@@ -83,28 +76,21 @@ export default function Home() {
         if (entry && entry.target instanceof HTMLElement) {
           setClickableSliderRef(entry.target);
         }
-        if (inView && entry.target) {
-          entry.target.scrollIntoView({ behavior: "smooth" });
-        }
       },
     });
 
-  const { ref: refTeamSection, inView: inViewTeamSection } = useInView({
+  const { ref: refContactSection, inView: inViewTeamSection } = useInView({
     threshold: 0.5,
     onChange: (inView, entry) => {
       if (entry && entry.target instanceof HTMLElement) {
-        setTeamRef(entry.target);
-      }
-      if (inView && entry.target) {
-        entry.target.scrollIntoView({ behavior: "smooth" });
+        setContactRef(entry.target);
       }
     },
   });
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (ref: HTMLElement | null) => {
+    if (ref) {
+      ref.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -211,7 +197,11 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      if (window.scrollY > window.innerHeight * 0.2) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -221,22 +211,12 @@ export default function Home() {
     };
   }, []);
 
-  // Button click handler to scroll to the bottom
-
-  const scrollToBottom = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-    setBottomReached(true);
-  };
-
   return (
     <main className="flex flex-col w-full h-full">
       <div id="home" ref={refHeroSection}>
         <HeroSectionComponent />
       </div>
-      <div id="services" ref={refServiceSliderRef}>
+      <div className="w-full h-full" id="services" ref={refServiceSliderRef}>
         <ServiceSolutions
           title={"Our Web Technologies Services"}
           slides={[
@@ -292,18 +272,46 @@ export default function Home() {
           ]}
         />
       </div>
-      <div id="helps" ref={refBigGriddy}>
+      <div className="w-full h-full" id="helps" ref={refBigGriddy}>
         <BigGrid />
       </div>
       <div
+        className="h-full w-full bg-white"
         id="benefits"
         ref={refClickableSliderRef}
-        className="h-full w-full bg-white"
       >
         <ClickablePaginationSlider title={"Our Web Packages"} slides={slides} />
       </div>
-      <div id="team" ref={refTeamSection} className="w-full">
-        <TwoColumnParallax />
+      <div className="" id="team">
+        <div className="app-layout flex items-center justify-between py-20 gap-10">
+          <div className="  w-[40%] flex item-center flex-col">
+            <Image
+              className="w-[250px] m-auto h-auto rounded-md my-5" // Ensure the image takes full width and adjusts height automatically
+              src="/ane.jpeg"
+              alt="CEO"
+              height={900}
+              width={800}
+              priority
+            />
+            <p className="text-center">Marketing Manager</p>
+          </div>
+          <div className="  w-[60%]  bg-black bg-opacity-30 px-4 space-y-2 py-14 rounded-lg">
+            <h2 className="text-white text-center">Annette Krafczyk</h2>
+            <p className="text-center w-full h-full ">
+              Thakur Singh Gurung, as the CEO, exemplifies visionary leadership
+              and strategic acumen, steering the company towards sustainable
+              growth and innovation. With a profound commitment to excellence,
+              he ensures the organization&apos;s goals align with its long-term
+              mission and values. Thakur Singh Gurung&apos;s dedication to
+              fostering strong relationships with stakeholders and his ability
+              to inspire and lead his team are key to the company&apos;s
+              continued success.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="contact" ref={refContactSection} className="w-full h-full">
+        <Contact_us />
       </div>
       <div className="flex fixed bottom-0 right-0 mb-16 mr-5 z-[8888] onScreenPageNav">
         <motion.div
@@ -318,7 +326,7 @@ export default function Home() {
             className={`md:text-lg ${
               inViewHeroSection ? "scale-125 text-red-400 font-semibold" : ""
             }`}
-            onClick={() => scrollToSection("home")}
+            onClick={() => scrollToSection(heroSectionRef)}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
@@ -335,7 +343,7 @@ export default function Home() {
                 ? "scale-125 text-yellow-400 font-semibold"
                 : ""
             }`}
-            onClick={() => scrollToSection("services")}
+            onClick={() => scrollToSection(serviceSliderRef)}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
@@ -351,7 +359,7 @@ export default function Home() {
             className={`md:text-lg ${
               inViewBigGrid ? "scale-125 text-rose-400 font-semibold" : ""
             }`}
-            onClick={() => scrollToSection("helps")}
+            onClick={() => scrollToSection(bigGridRef)}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
@@ -369,7 +377,7 @@ export default function Home() {
                 ? "scale-125 text-sky-400 font-semibold"
                 : ""
             }`}
-            onClick={() => scrollToSection("benefits")}
+            onClick={() => scrollToSection(clickableSliderRef)}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
@@ -384,11 +392,11 @@ export default function Home() {
             className={`md:text-lg ${
               inViewTeamSection ? "scale-125 text-green-400 font-semibold" : ""
             }`}
-            onClick={() => scrollToSection("team")}
+            onClick={() => scrollToSection(contactRef)}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
-                <MdPeopleAlt size={24} />
+                <FaPhoneAlt size={24} />
               </HoverCardTrigger>
               {/* <HoverCardContent className='md:h-7 md:w-40 flex justify-center items-center bg-black bg-opacity-75 cursor-pointer md:rounded-md md:left-8 md:mr-1'>
                   Benefits

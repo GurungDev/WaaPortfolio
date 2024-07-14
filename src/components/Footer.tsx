@@ -11,7 +11,7 @@ const Footer = () => {
     {" "}
         <div className="flex gap-10 flex-col  justify-between py-5">
           <div className="flex flex-col space-y-3 md:w-[600px]">
-            <h2 className=" font-semibold">Waa Tech</h2>
+            <h2 className=" font-semibold">Waa Tech Ltd.</h2>
             <p className=" tagline font-semibold">
               Blending your Vision with our Expertise.
             </p>
