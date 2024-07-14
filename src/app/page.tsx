@@ -15,7 +15,6 @@ import { RiTeamFill } from "react-icons/ri";
 import { PiStarThin } from "react-icons/pi";
 import { LiaHandsHelpingSolid } from "react-icons/lia";
 import { MdDesignServices } from "react-icons/md";
-import { FaAnglesDown } from "react-icons/fa6";
 
 import {
   HoverCard,
@@ -28,21 +27,19 @@ import TwoColumnParallax from "@/components/parallaxScroll/Parallaxscroll";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+
   const [heroSectionRef, setHeroSectionRef] = useState<HTMLElement | null>(null);
   const [serviceSliderRef, setServiceSliderRef] = useState<HTMLElement | null>(null);
   const [bigGridRef, setBigGriddyRef] = useState<HTMLElement | null>(null);
   const [teamRef, setTeamRef] = useState<HTMLElement | null>(null);
   const [clickableSliderRef, setClickableSliderRef] = useState<HTMLElement | null>(null);
-  const [bottomReached, setBottomReached] = useState(false);
+
 
   const { ref: refHeroSection, inView: inViewHeroSection } = useInView({
     threshold: 0.5,
     onChange: (inView, entry) => {
       if (entry && entry.target instanceof HTMLElement) {
         setHeroSectionRef(entry.target);
-      }
-      if (inView && entry.target) {
-        entry.target.scrollIntoView({ behavior: "smooth" });
       }
     },
   });
@@ -55,9 +52,7 @@ export default function Home() {
       if (entry && entry.target instanceof HTMLElement) {
         setServiceSliderRef(entry.target);
       }
-      if (inView && entry.target) {
-        entry.target.scrollIntoView({ behavior: "smooth" });
-      }
+
     },
   });
 
@@ -67,9 +62,7 @@ export default function Home() {
         if (entry && entry.target instanceof HTMLElement) {
           setBigGriddyRef(entry.target);
         }
-        if (inView && entry.target) {
-          entry.target.scrollIntoView({ behavior: "smooth" });
-        }
+
       },
     });
 
@@ -78,9 +71,6 @@ export default function Home() {
     onChange: (inView, entry) => {
       if (entry && entry.target instanceof HTMLElement) {
         setClickableSliderRef(entry.target);
-      }
-      if (inView && entry.target) {
-        entry.target.scrollIntoView({ behavior: "smooth" });
       }
     },
   });
@@ -91,16 +81,12 @@ export default function Home() {
       if (entry && entry.target instanceof HTMLElement) {
         setTeamRef(entry.target);
       }
-      if (inView && entry.target) {
-        entry.target.scrollIntoView({ behavior: "smooth" });
-      }
     },
   });
 
-  const scrollToSection = (id:string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (ref: HTMLElement | null) => {
+    if (ref) {
+      ref.scrollIntoView({ behavior: "smooth" });
     }
   };
   
@@ -186,33 +172,26 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      if (window.scrollY > window.innerHeight * 0.2) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
-    
   }, []);
-  
-    // Button click handler to scroll to the bottom
-
-    const scrollToBottom = () => {
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: "smooth",
-      });
-      setBottomReached(true);
-    };
 
   return (
     <main className="flex flex-col w-full h-full">
       <div id="home" ref={refHeroSection}>
         <HeroSectionComponent />
       </div>
-      <div id="services" ref={refServiceSliderRef}>
+      <div className="w-full h-full" id="services" ref={refServiceSliderRef}>
         <ServiceSolutions
           title={"Our Web Technologies Services"}
           slides={[
@@ -261,16 +240,16 @@ export default function Home() {
           ]}
         />
       </div>
-      <div id="helps" ref={refBigGriddy}>
+      <div className="w-full h-full"  id="helps" ref={refBigGriddy}>
         <BigGrid />
       </div>
-      <div id="benefits" ref={refClickableSliderRef} className="h-full w-full bg-white">
+      <div className="h-full w-full bg-white" id="benefits" ref={refClickableSliderRef} >
         <ClickablePaginationSlider
           title={"Our Web Technologies Services"}
           slides={slides}
         />
       </div>
-      <div id="team" ref={refTeamSection} className="w-full">
+      <div  className="w-full h-full"  id="team" ref={refTeamSection} >
         <TwoColumnParallax/>
       </div>
       <div className="flex fixed bottom-0 right-0 mb-16 mr-5 z-[8888] onScreenPageNav">
@@ -286,7 +265,7 @@ export default function Home() {
             className={`md:text-lg ${
               inViewHeroSection ? "scale-125 text-red-400 font-semibold" : ""
             }`}
-            onClick={() => scrollToSection("home")}
+            onClick={() => scrollToSection(heroSectionRef)}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
@@ -301,7 +280,7 @@ export default function Home() {
             className={`md:text-lg ${
               inViewServiceSlider ? "scale-125 text-yellow-400 font-semibold" : ""
             }`}
-            onClick={() => scrollToSection("services")}
+            onClick={() => scrollToSection(serviceSliderRef)}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
@@ -317,7 +296,7 @@ export default function Home() {
             className={`md:text-lg ${
               inViewBigGrid ? "scale-125 text-rose-400 font-semibold" : ""
             }`}
-            onClick={() => scrollToSection("helps")}
+            onClick={() => scrollToSection(bigGridRef)}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
@@ -335,7 +314,7 @@ export default function Home() {
                 ? "scale-125 text-sky-400 font-semibold"
                 : ""
             }`}
-            onClick={() => scrollToSection("benefits")}
+            onClick={() => scrollToSection(clickableSliderRef)}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
@@ -350,7 +329,7 @@ export default function Home() {
             className={`md:text-lg ${
               inViewTeamSection ? "scale-125 text-green-400 font-semibold" : ""
             }`}
-            onClick={() => scrollToSection("team")}
+            onClick={() => scrollToSection(teamRef)}
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">

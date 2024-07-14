@@ -67,7 +67,7 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
           delay: 5000, // 5 seconds
           disableOnInteraction: false,
         }}
-        loop={true}
+        
         onAutoplayTimeLeft={progressBarLine}
       >
         {slides.map((slide, index) => (

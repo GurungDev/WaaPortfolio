@@ -19,7 +19,6 @@ export default function TwoColumnParallax() {
                 className='w-full h-auto' // Ensure the image takes full width and adjusts height automatically
                 src="/assets/img/men.webp" 
                 alt="CEO" 
-                layout="responsive" 
                 height={900} 
                 width={800} 
               />
@@ -34,7 +33,6 @@ export default function TwoColumnParallax() {
               <Image 
                 src="/assets/img/women.webp" 
                 alt="Project Manager" 
-                layout="responsive" // Use responsive layout for image
                 height={1100} 
                 width={1000} 
               />
@@ -49,7 +47,6 @@ export default function TwoColumnParallax() {
               <Image 
                 src="/assets/img/men2.png" 
                 alt="Marketing Manager" 
-                layout="responsive" // Use responsive layout for image
                 height={1100} 
                 width={1000} 
               />
