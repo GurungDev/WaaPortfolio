@@ -32,9 +32,7 @@ const HeroSectionComponent = () => {
                   typewriter.start(); // Restart the typing effect
                 });
             }}
-            options={{
-              loop: true, // Make the typewriter effect loop indefinitely
-            }}
+          
           />
 
           <button className="button duration-300 group hover:bg-transparent relative my-7">
