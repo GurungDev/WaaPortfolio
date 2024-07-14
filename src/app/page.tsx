@@ -28,11 +28,16 @@ import TwoColumnParallax from "@/components/parallaxScroll/Parallaxscroll";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [heroSectionRef, setHeroSectionRef] = useState<HTMLElement | null>(null);
-  const [serviceSliderRef, setServiceSliderRef] = useState<HTMLElement | null>(null);
+  const [heroSectionRef, setHeroSectionRef] = useState<HTMLElement | null>(
+    null
+  );
+  const [serviceSliderRef, setServiceSliderRef] = useState<HTMLElement | null>(
+    null
+  );
   const [bigGridRef, setBigGriddyRef] = useState<HTMLElement | null>(null);
   const [teamRef, setTeamRef] = useState<HTMLElement | null>(null);
-  const [clickableSliderRef, setClickableSliderRef] = useState<HTMLElement | null>(null);
+  const [clickableSliderRef, setClickableSliderRef] =
+    useState<HTMLElement | null>(null);
   const [bottomReached, setBottomReached] = useState(false);
 
   const { ref: refHeroSection, inView: inViewHeroSection } = useInView({
@@ -47,8 +52,6 @@ export default function Home() {
     },
   });
 
-
-
   const { ref: refServiceSliderRef, inView: inViewServiceSlider } = useInView({
     threshold: 0.5,
     onChange: (inView, entry) => {
@@ -61,29 +64,30 @@ export default function Home() {
     },
   });
 
-    const { ref: refBigGriddy, inView: inViewBigGrid } = useInView({
-      threshold: 0.1,
-      onChange: (inView, entry) => {
-        if (entry && entry.target instanceof HTMLElement) {
-          setBigGriddyRef(entry.target);
-        }
-        if (inView && entry.target) {
-          entry.target.scrollIntoView({ behavior: "smooth" });
-        }
-      },
-    });
-
-  const { ref: refClickableSliderRef, inView: inViewClickableSlider } = useInView({
-    threshold: 0.5,
+  const { ref: refBigGriddy, inView: inViewBigGrid } = useInView({
+    threshold: 0.1,
     onChange: (inView, entry) => {
       if (entry && entry.target instanceof HTMLElement) {
-        setClickableSliderRef(entry.target);
+        setBigGriddyRef(entry.target);
       }
       if (inView && entry.target) {
         entry.target.scrollIntoView({ behavior: "smooth" });
       }
     },
   });
+
+  const { ref: refClickableSliderRef, inView: inViewClickableSlider } =
+    useInView({
+      threshold: 0.5,
+      onChange: (inView, entry) => {
+        if (entry && entry.target instanceof HTMLElement) {
+          setClickableSliderRef(entry.target);
+        }
+        if (inView && entry.target) {
+          entry.target.scrollIntoView({ behavior: "smooth" });
+        }
+      },
+    });
 
   const { ref: refTeamSection, inView: inViewTeamSection } = useInView({
     threshold: 0.5,
@@ -97,14 +101,12 @@ export default function Home() {
     },
   });
 
-  const scrollToSection = (id:string) => {
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-  
-  
 
   const slides = [
     {
@@ -124,62 +126,85 @@ export default function Home() {
     },
     {
       icon: <BiSolidPackage size={33} className="text-3xl text-blue-400" />,
-      label: "Marketing",
+      label: "Medium",
       text_color: "text-blue-400",
       bg_color: "bg-blue-400",
       image: "/assets/img/marketing.avif",
       subpoints: [
-        "Drive more revenue",
-        "Quickly book time to solve customers’ needs and help them self-serve to support their goals.",
-        "Speed up your sales cycle",
-        "Keep your deal momentum high and remove scheduling friction at every stage of your sales cycle.",
-        "Close more deals",
-        "Change the way you schedule meetings to increase customer satisfaction and keep engagement high with reminder and follow-up workflows.",
+        "Description: ",
+        "A static website suitable for showcasing information.",
+        "Features:",
+        "- 4-7 pages or a single landing page.",
+        "- Responsive design.",
+        "- Enhanced SEO optimization.",
+        "- Visually appealing UI design with animations.",
       ],
     },
     {
       icon: <BiSolidPackage size={38} className="text-3xl text-red-500" />,
-      label: "Customer Hope",
+      label: "Large",
       text_color: "text-red-400",
       bg_color: "bg-red-400",
       image: "/assets/img/hope.jpg",
       subpoints: [
-        "Drive more revenue",
-        "Quickly book time to solve customers’ needs and help them self-serve to support their goals.",
-        "Speed up your sales cycle",
-        "Keep your deal momentum high and remove scheduling friction at every stage of your sales cycle.",
-        "Close more deals",
-        "Change the way you schedule meetings to increase customer satisfaction and keep engagement high with reminder and follow-up workflows.",
+        "Description: ",
+        "A dynamic website with basic CRUD functionality.",
+        "Features:",
+        "- 5-7 pages including a landing page.",
+        "- Responsive design.",
+        "- Basic CRUD operations (Create, Read, Update, Delete).",
+        "- Backend support with a simple database (e.g., MongoDb, MySQL).",
+        "- User authentication and login functionality.",
+        "- Basic admin panel to manage content.",
+        "- Enhanced SEO optimization.",
+        "- Contact form with email notifications.",
       ],
     },
     {
       icon: <BiSolidPackage size={43} className="text-3xl text-green-900" />,
-      label: "Networks",
+      label: "Complex",
       text_color: "text-green-800",
       bg_color: "bg-green-800",
       image: "/assets/img/network.webp",
       subpoints: [
-        "Drive more revenue",
-        "Quickly book time to solve customers’ needs and help them self-serve to support their goals.",
-        "Speed up your sales cycle",
-        "Keep your deal momentum high and remove scheduling friction at every stage of your sales cycle.",
-        "Close more deals",
-        "Change the way you schedule meetings to increase customer satisfaction and keep engagement high with reminder and follow-up workflows.",
+        "Description: ",
+        "A website with advanced functionalities.",
+        "Features:",
+        "- 8-10 pages including a landing page.",
+        "- Responsive and fast-loading design.",
+        "- Advanced CRUD operations with relational database support.",
+        "- Backend support with robust databases (e.g., PostgreSQL, MongoDB).",
+        "- User authentication and roles management.",
+        "- Advanced admin panel with analytics and reporting.",
+        "- Integration with third-party services (e.g., payment gateways, social media).",
+        "- Enhanced UI/UX design.",
+        "- Advanced SEO optimization.",
+        "- Contact forms with database storage and email notifications.",
+        "- Performance optimization and security measures.",
       ],
     },
     {
       icon: <BiSolidPackage size={48} className="text-3xl text-black" />,
-      label: "Teams",
+      label: "Premium",
       text_color: "text-black",
       bg_color: "bg-black",
       image: "/assets/img/teams.jpg",
       subpoints: [
-        "Drive more revenue",
-        "Speed up your sales cycle",
-        "Keep your deal momentum high and remove scheduling friction at every stage of your sales cycle.",
-        "Quickly book time to solve customers’ needs and help them self-serve to support their goals.",
-        "Close more deals",
-        "Change the way you schedule meetings to increase customer satisfaction and keep engagement high with reminder and follow-up workflows.",
+        "Description: ",
+        "A highly customized website with complex functionalities.",
+        "Features:",
+        "- More than 10 pages including a landing page (number of pages based on client requirements).",
+        "- Highly responsive and fast-loading design.",
+        "- Advanced CRUD operations with relational and/or NoSQL databases.",
+        "- Comprehensive backend support with scalable solutions.",
+        "- Custom functionalities tailored to client requirements (e.g., e-commerce, membership systems).",
+        "- Advanced user authentication, roles, and permissions management.",
+        "- Comprehensive admin panel with advanced analytics, reporting, and user management.",
+        "- Extensive integration with third-party services (e.g., CRM, ERP, payment gateways).",
+        "- High-quality UI/UX design with custom themes and graphics.",
+        "- Extensive SEO and performance optimization.",
+        "- Contact forms with advanced features (e.g., file uploads, conditional logic).",
+        "- Advanced security measures and compliance with industry standards.",
       ],
     },
   ];
@@ -194,18 +219,17 @@ export default function Home() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-    
   }, []);
-  
-    // Button click handler to scroll to the bottom
 
-    const scrollToBottom = () => {
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: "smooth",
-      });
-      setBottomReached(true);
-    };
+  // Button click handler to scroll to the bottom
+
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+    setBottomReached(true);
+  };
 
   return (
     <main className="flex flex-col w-full h-full">
@@ -271,14 +295,15 @@ export default function Home() {
       <div id="helps" ref={refBigGriddy}>
         <BigGrid />
       </div>
-      <div id="benefits" ref={refClickableSliderRef} className="h-full w-full bg-white">
-        <ClickablePaginationSlider
-          title={"Our Web Packages"}
-          slides={slides}
-        />
+      <div
+        id="benefits"
+        ref={refClickableSliderRef}
+        className="h-full w-full bg-white"
+      >
+        <ClickablePaginationSlider title={"Our Web Packages"} slides={slides} />
       </div>
       <div id="team" ref={refTeamSection} className="w-full">
-        <TwoColumnParallax/>
+        <TwoColumnParallax />
       </div>
       <div className="flex fixed bottom-0 right-0 mb-16 mr-5 z-[8888] onScreenPageNav">
         <motion.div
@@ -306,7 +331,9 @@ export default function Home() {
           </button>
           <div
             className={`md:text-lg ${
-              inViewServiceSlider ? "scale-125 text-yellow-400 font-semibold" : ""
+              inViewServiceSlider
+                ? "scale-125 text-yellow-400 font-semibold"
+                : ""
             }`}
             onClick={() => scrollToSection("services")}
           >
@@ -361,7 +388,7 @@ export default function Home() {
           >
             <HoverCard>
               <HoverCardTrigger className="cursor-pointer hover:scale-105">
-                <MdPeopleAlt  size={24} />
+                <MdPeopleAlt size={24} />
               </HoverCardTrigger>
               {/* <HoverCardContent className='md:h-7 md:w-40 flex justify-center items-center bg-black bg-opacity-75 cursor-pointer md:rounded-md md:left-8 md:mr-1'>
                   Benefits
@@ -381,7 +408,6 @@ export default function Home() {
               </HoverCardTrigger>
             </HoverCard>
           </button> */}
-
         </motion.div>
       </div>
     </main>
