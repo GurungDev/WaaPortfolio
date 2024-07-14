@@ -14,8 +14,8 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Waa Tech",
-  description: "Waa Tech",
+  title: "Waa Tech Ltd.",
+  description: "Waa Tech Ltd.",
 };
 
 export default function RootLayout({

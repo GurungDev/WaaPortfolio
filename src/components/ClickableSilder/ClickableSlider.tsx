@@ -4,7 +4,8 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper/types";
 import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
-
+import Lottie from "lottie-react";
+import a4 from "@/animation/a4.json"
 import Image from "next/image";
 
 type SlideData = {
@@ -94,7 +95,6 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
         thumbs={{ swiper: thumbsSwiper }}
         modules={[Autoplay, FreeMode, Thumbs]}
         className="swiper1 mySwiper2 "
-    
         autoplay={{
           delay: 5000, // 5 seconds
           disableOnInteraction: false,
@@ -109,40 +109,25 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
                 <div className="">
                   {slide.subpoints.map((subpoint, subIndex) => (
                     <div className="p-2" key={subIndex}>
-                      {subIndex % 2 === 0 ? (
-                        <h5
+                      {subIndex == 0 || subIndex == 2 ? (
+                        <h3
                           className={`${
-                            subIndex % 2 === 0
+                            subIndex == 0 || subIndex == 2
                               ? ` font-semibold ${slide.text_color}`
                               : `   mb-3`
                           } text-black`}
                         >
                           {subpoint}
-                        </h5>
+                        </h3>
                       ) : (
-                        <p
-                          className={`${
-                            subIndex % 2 === 0
-                              ? ` font-semibold ${slide.text_color}`
-                              : `   mb-3`
-                          } text-black`}
-                        >
-                          {subpoint}
-                        </p>
+                        <p className="text-black">{subpoint}</p>
                       )}
-                    
                     </div>
                   ))}
                 </div>
               </div>
               <div className="px-2 order-1 min-[1100px]:order-2 py-4 md:w-[60%] min-[1100px]:w-[30%]">
-                <Image
-                  className="size-80"
-                  src={slide.image}
-                  alt={slide.label}
-                  height={1920}
-                  width={1080}
-                />
+                <Lottie animationData={a4} />
               </div>
             </div>
           </SwiperSlide>

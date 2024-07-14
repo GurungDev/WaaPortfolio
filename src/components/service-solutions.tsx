@@ -45,7 +45,7 @@ export default function ServiceSolutions({ slides, title }: Props) {
           className="slider6"
           loop={loop}
           preventClicks={false}
-          centeredSlides
+      
           preventClicksPropagation={false}
           navigation={{
             prevEl: `#prev_slide5`,

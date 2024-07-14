@@ -32,19 +32,25 @@ const NavbarComponent = () => {
     };
   }, []);
 
+  const isNotHomePage = pathname !== "/";
+
   return (
     <nav
       className={`fixed top-0 w-full left-0 right-0 transition-all duration-500 z-50 ${
-        scroll > 0 ? "bg-zinc-200 shadow-xl" : "bg-transparent"
+        scroll > 0 || isNotHomePage ? "bg-zinc-200 shadow-xl" : "bg-transparent"
       } backdrop-blur-sm`}
     >
       <div className="app-layout flex items-center justify-between py-3 px-4">
-        <h4 className={` ${scroll > 0 ? "text-neutral-700" : "text-white"}`}>
-          Waa Tech
+        <h4
+          className={` ${
+            scroll > 0 || isNotHomePage ? "text-neutral-700" : "text-white"
+          }`}
+        >
+          Waa Tech Ltd.
         </h4>
         <div
           className={`hidden min-[1100px]:flex gap-5 ${
-            scroll > 0 ? "text-neutral-800" : "text-white"
+            scroll > 0 || isNotHomePage ? "text-neutral-800" : "text-white"
           }`}
         >
           {[
@@ -71,7 +77,7 @@ const NavbarComponent = () => {
         </div>
         <div
           className={`flex gap-3 ${
-            scroll > 0 ? "text-neutral-700" : "text-white"
+            scroll > 0 || isNotHomePage ? "text-neutral-700" : "text-white"
           }`}
         >
           <Link href="https://wa.me/message/S4GEVFXDYT7UO1">

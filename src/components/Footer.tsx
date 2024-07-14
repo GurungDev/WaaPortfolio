@@ -74,6 +74,11 @@ const Footer = () => {
           <p>© Copyright 2023, All Rights Reserved by Waa Tech.</p>
         </div>
       </div>
+      <div className="flex gap-3 text-black justify-center  py-5">
+          <Link href="/privacy">Privacy</Link>
+          |
+          <Link href="/imprint">Imprint</Link>
+        </div>
     </div>
   );
 };
