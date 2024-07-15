@@ -32,7 +32,15 @@ const ImprintPage = () => {
           <h4 className="text-center">Romisha Gurung</h4>
         </div>
       </div>
-      <div className="grid gap-2 text-black text-center py-10">
+      <div className="grid gap-2 justify-center items-center text-black text-center py-10">
+         <div className="relative  w-[300px] h-[300px] overflow-hidden">
+            <Image
+              src={"/logo.jpg"}
+              layout="fill"
+              objectFit="cover"
+              alt="CEO image"
+            />
+          </div>
         <h5>WAA Tech Ltd.</h5>
         <h5>NiLe Street 64, London, UK</h5>
         <h5>UTR: 32568 17834</h5>

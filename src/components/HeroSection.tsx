@@ -13,9 +13,18 @@ const HeroSectionComponent = () => {
       }}
       className="bg-fixed trending-hidden   bg-cover bg-center "
     >
-      <div className="relative h-[100vh] flex flex-col items-center justify-center text-center bg-cover bg-center">
+      <div className="relative h-[100vh]  flex flex-col items-center justify-center text-center bg-cover bg-center">
         {" "}
         <div className="w-[90%] md:w-[70%] text-white">
+          <div className="relative m-auto w-[300px] h-[250px] overflow-hidden glass ">
+            <Image
+              src={"/logo.png"}
+              layout="fill"
+              objectFit="cover"
+              alt="Logo"
+            />
+          </div>
+
           <h1 className="text-3xl lg:text-6xl min-[1900px]:text-9xl bg-gradient-to-r from-blue-500 via-blue-100 to-neutral-100 bg-clip-text text-transparent font-[800] mb-10  ">
             YOUR BEST IT PARTNERS
           </h1>
@@ -28,7 +37,10 @@ const HeroSectionComponent = () => {
           </p>
 
           <button className="button duration-300 group hover:bg-transparent relative my-7">
-            <Link href={"/#contact"} className="flex items-center justify-between">
+            <Link
+              href={"/#contact"}
+              className="flex items-center justify-between"
+            >
               <p className="">Get in touch</p>
               <BsArrowRightShort className="text-[1.5em]  group-hover:translate-x-[10px]  duration-300 " />
             </Link>
