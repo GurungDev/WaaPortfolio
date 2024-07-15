@@ -21,7 +21,7 @@ const Footer = () => {
               <p className="caption">
                 We assist businesses from all over the world in creating digital
                 products with no expiration date. We streamline your vision with
-                our expertise to bring life to your fantastic ideas!
+                our expertise to bring life to your fantastic ideas.
               </p>
             </div>
 
@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex w-full justify-center items-center mt-7">
-          <p>© Copyright 2024, All Rights Reserved by Waa Tech Ltd.</p>
+          <p>© Copyright 2024, All Rights Reserved by WAA Tech Ltd.</p>
         </div>
       </div>
       <div className="flex gap-3 text-black justify-center  py-5">
