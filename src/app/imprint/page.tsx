@@ -44,7 +44,7 @@ const ImprintPage = () => {
         <h5>WAA Tech Ltd.</h5>
         <h5>NiLe Street 64, London, UK</h5>
         <h5>UTR: 32568 17834</h5>
-        <h5>Contact: tech@gmail.com</h5>
+        <h5>Contact: waatech2024@gmail.com</h5>
       </div>
     </div>
   );
