@@ -137,12 +137,11 @@ export default function Home() {
         "A dynamic website with basic CRUD functionality.",
         "Features:",
         "- 5-7 pages including a landing page.",
-        "- Responsive design.",
+        "- Responsive design and enhanced SEO optimization.",
         "- Basic CRUD operations (Create, Read, Update, Delete).",
         "- Backend support with a simple database (e.g., MongoDb, MySQL).",
         "- User authentication and login functionality.",
         "- Basic admin panel to manage content.",
-        "- Enhanced SEO optimization.",
         "- Contact form with email notifications.",
       ],
     },
@@ -156,15 +155,11 @@ export default function Home() {
         "Description: ",
         "A website with advanced functionalities.",
         "Features:",
-        "- 8-10 pages including a landing page.",
-        "- Responsive and fast-loading design.",
-        "- Advanced CRUD operations with relational database support.",
-        "- Backend support with robust databases (e.g., PostgreSQL, MongoDB).",
+        "- 8-10 pages, including a landing page.",
+        "- Responsive fast-loading design and advanced CRUD operations.",
         "- User authentication and roles management.",
-        "- Advanced admin panel with analytics and reporting.",
-        "- Integration with third-party services (e.g., payment gateways, social media).",
-        "- Enhanced UI/UX design.",
-        "- Advanced SEO optimization.",
+        "- Advanced admin panel with analytics, reporting and integration with third-party services.",
+        "- Enhanced UI/UX design,Advanced SEO.",
         "- Contact forms with database storage and email notifications.",
         "- Performance optimization and security measures.",
       ],
@@ -179,18 +174,13 @@ export default function Home() {
         "Description: ",
         "A highly customized website with complex functionalities.",
         "Features:",
-        "- More than 10 pages including a landing page (number of pages based on client requirements).",
+        "- More than 10 pages including a landing page.",
         "- Highly responsive and fast-loading design.",
         "- Advanced CRUD operations with relational and/or NoSQL databases.",
-        "- Comprehensive backend support with scalable solutions.",
-        "- Custom functionalities tailored to client requirements (e.g., e-commerce, membership systems).",
-        "- Advanced user authentication, roles, and permissions management.",
-        "- Comprehensive admin panel with advanced analytics, reporting, and user management.",
-        "- Extensive integration with third-party services (e.g., CRM, ERP, payment gateways).",
-        "- High-quality UI/UX design with custom themes and graphics.",
-        "- Extensive SEO and performance optimization.",
-        "- Contact forms with advanced features (e.g., file uploads, conditional logic).",
-        "- Advanced security measures and compliance with industry standards.",
+        "- Scalable backend support and custom functionalities (e.g., e-commerce.) ",
+        "- Advanced user authentication & roles and admin panel with analytics, reporting.",
+        "- Third-party service integration and high quality UI/UX.",
+        "- SEO & performance optimization and advanced contact forms security & compliance.",
       ],
     },
   ];
@@ -221,49 +211,49 @@ export default function Home() {
           title={"Our Web Technologies Services"}
           slides={[
             {
-              image: "/assets/img/ai.png",
+              image: "/web.jpg",
               title: "Custom Web Development",
               bg: "bg-blue-400",
               description:
                 "Create bespoke web solutions tailored to your business needs, from simple websites to complex web applications.",
             },
             {
-              image: "/assets/img/ai.png",
+              image: "/soft.jpg",
               title: "Custom Software Development",
               bg: "bg-blue-400",
               description:
                 "We provide custom software development, integration, and support, ensuring secure and scalable solutions tailored to your needs.",
             },
             {
-              image: "/assets/img/ai.png",
+              image: "/ui.jpg",
               title: "UX/UI Design",
               bg: "bg-green-400",
               description:
                 "Design user-centric interfaces and experiences that enhance usability and engagement, ensuring a seamless user journey.",
             },
             {
-              image: "/assets/img/ai.png",
+              image: "/seo.jpg",
               title: "SEO Optimization",
               bg: "bg-orange-400",
               description:
                 "Improve your website’s visibility on search engines with comprehensive SEO strategies that drive organic traffic and increase rankings.",
             },
             {
-              image: "/assets/img/ai.png",
+              image: "/ecommerce.jpg",
               title: "E-commerce Solutions",
               bg: "bg-purple-400",
               description:
                 "Develop and optimize e-commerce platforms that provide smooth shopping experiences, integrate payment gateways, and manage inventory efficiently.",
             },
             {
-              image: "/assets/img/ai.png",
+              image: "/maintain.jpg",
               title: "Web Maintenance",
               bg: "bg-red-400",
               description:
                 "Ensure your website runs smoothly with ongoing maintenance services that address bugs, update content, and enhance performance.",
             },
             {
-              image: "/assets/img/ai.png",
+              image: "/analytics.jpg",
               title: "Web Analytics",
               bg: "bg-teal-400",
               description:
@@ -283,7 +273,7 @@ export default function Home() {
         <ClickablePaginationSlider title={"Our Web Packages"} slides={slides} />
       </div>
       <div className="" id="team">
-        <div className="app-layout flex items-center justify-between py-20 gap-10">
+        <div className="app-layout flex flex-col min-[1100px]:flex-row items-center justify-between py-20 gap-10">
           <div className="  w-[40%] flex item-center flex-col">
             <Image
               className="w-[250px] m-auto h-auto rounded-md my-5" // Ensure the image takes full width and adjusts height automatically
@@ -293,19 +283,19 @@ export default function Home() {
               width={800}
               priority
             />
-            <p className="text-center">Marketing Manager</p>
+            <p className="text-center font-bold">Marketing Manager</p>
+            <p className="text-center">Annette Krafczyk</p>
+            
           </div>
           <div className="  w-[60%]  bg-black bg-opacity-30 px-4 space-y-2 py-14 rounded-lg">
-            <h2 className="text-white text-center">Annette Krafczyk</h2>
             <p className="text-center w-full h-full ">
-              Thakur Singh Gurung, as the CEO, exemplifies visionary leadership
-              and strategic acumen, steering the company towards sustainable
-              growth and innovation. With a profound commitment to excellence,
-              he ensures the organization&apos;s goals align with its long-term
-              mission and values. Thakur Singh Gurung&apos;s dedication to
-              fostering strong relationships with stakeholders and his ability
-              to inspire and lead his team are key to the company&apos;s
-              continued success.
+              Annette Krafczyk, as the Marketing Manager, exemplifies creativity
+              and strategic prowess, driving the company&apos;s brand forward
+              with innovative campaigns. With a deep commitment to excellence,
+              she ensures the marketing strategies align with the company’s
+              vision and values. Sarah&apos;s dedication to building strong
+              customer relationships and her ability to lead and inspire her
+              team are pivotal to the company&apos;s ongoing success.
             </p>
           </div>
         </div>

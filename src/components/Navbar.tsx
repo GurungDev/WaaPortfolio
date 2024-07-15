@@ -46,8 +46,7 @@ const NavbarComponent = () => {
             scroll > 0 || isNotHomePage ? "text-neutral-700" : "text-white"
           }`}
         >
-          <Link href="/">Waa Tech Ltd.</Link>
-          
+          <Link href="/">WAA Tech Ltd.</Link>
         </h4>
 
         <div
@@ -65,7 +64,11 @@ const NavbarComponent = () => {
             <Link
               href={link.href}
               key={link.href}
-              className={` ${isNotHomePage ? "hidden" : "caption font-[200] tracking-loose leading-[1.2rem]" } `}
+              className={` ${
+                isNotHomePage
+                  ? "hidden"
+                  : "caption font-[200] tracking-loose leading-[1.2rem]"
+              } `}
               onClick={() => setActiveLink(link.href)}
             >
               <p>{link.label}</p>
@@ -83,18 +86,11 @@ const NavbarComponent = () => {
             scroll > 0 || isNotHomePage ? "text-neutral-700" : "text-white"
           }`}
         >
-          <Link href="#">
+          <Link href="https://wa.me/+4915231401084">
             <FaWhatsapp size={24} />
           </Link>
-          <Link href="mailto:gurungngr@gmail.com">
+          <Link href="mailto:waatech2024@gmail.com">
             <IoMailOpenOutline size={24} />
-          </Link>
-
-          <Link href="#">
-            <FaInstagram size={24} />
-          </Link>
-          <Link href="#">
-            <FaTiktok size={24} />
           </Link>
         </div>
       </div>
