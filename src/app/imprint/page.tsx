@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
+import { HiAcademicCap } from "react-icons/hi2";
+
 const ImprintPage = () => {
   return (
     <div className="py-20 bg-white">
@@ -28,19 +30,26 @@ const ImprintPage = () => {
               alt="Project Manager image"
             />
           </div>
-          <h3 className="text-center">OWNER / <br /> Project Manager</h3>
+          <h3 className="text-center">
+            OWNER / <br /> Project Manager
+          </h3>
           <h4 className="text-center">Romisha Gurung</h4>
+          <h5 className="text-center ">
+         
+            Bachelor In Information Technology
+          </h5>
+          <h5 className="text-center flex gap-3" >    <HiAcademicCap size={25}/>London Metropolitian University</h5>
         </div>
       </div>
       <div className="grid gap-2 justify-center items-center text-black text-center py-10">
-         <div className="relative  w-[300px] h-[300px] overflow-hidden">
-            <Image
-              src={"/logo.jpg"}
-              layout="fill"
-              objectFit="cover"
-              alt="CEO image"
-            />
-          </div>
+        <div className="relative  w-[300px] h-[300px] overflow-hidden">
+          <Image
+            src={"/logo.jpg"}
+            layout="fill"
+            objectFit="cover"
+            alt="CEO image"
+          />
+        </div>
         <h5>WAA Tech Ltd.</h5>
         <h5>NiLe Street 64, London, UK</h5>
         <h5>UTR: 32568 17834</h5>

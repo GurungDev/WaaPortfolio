@@ -139,7 +139,7 @@
 
   .mySwiper1 .swiper-slide-thumb-active .progressBar {
     width: 100%;
-    transition: width 7s ease; 
+    transition: width 12s ease; 
   }
 
   .mySwiper2{
