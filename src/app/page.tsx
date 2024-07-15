@@ -293,7 +293,7 @@ export default function Home() {
               and strategic prowess, driving the company&apos;s brand forward
               with innovative campaigns. With a deep commitment to excellence,
               she ensures the marketing strategies align with the company’s
-              vision and values. Sarah&apos;s dedication to building strong
+              vision and values. Annette&apos;s dedication to building strong
               customer relationships and her ability to lead and inspire her
               team are pivotal to the company&apos;s ongoing success.
             </p>

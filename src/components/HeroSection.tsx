@@ -9,18 +9,19 @@ const HeroSectionComponent = () => {
   return (
     <div
       style={{
-        backgroundImage: ` linear-gradient( rgba(0,0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(/landing.jpg)`,
+        backgroundImage: ` linear-gradient( rgba(0,0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(/landing.png)`,
       }}
       className="bg-fixed trending-hidden   bg-cover bg-center "
     >
       <div className="relative h-[100vh]  flex flex-col items-center justify-center text-center bg-cover bg-center">
         {" "}
-        <div className="w-[90%] md:w-[70%] text-white">
-          <div className="relative m-auto w-[300px] h-[250px] overflow-hidden glass ">
+        <div className="w-[90%] md:w-[70%] text-white text-left">
+          <div className="relative w-[300px] h-[250px]  ">
             <Image
-              src={"/logo.png"}
-              layout="fill"
-              objectFit="cover"
+              src={"/l1.png"}
+              width={700}
+              height={600}
+              className="w-full h-full inset-0 object cover"
               alt="Logo"
             />
           </div>

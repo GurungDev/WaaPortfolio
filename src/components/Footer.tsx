@@ -70,7 +70,7 @@ const Footer = () => {
                 <p className="mb-5">
                   <IoLocationSharp />{" "}
                 </p>
-                <p>2NiLe Street 64, London, UK</p>
+                <p>NiLe Street 64, London, UK</p>
               </div>
               <div className="flex justify-start items-center space-x-1 ">
                 <p className="">
