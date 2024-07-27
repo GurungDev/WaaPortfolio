@@ -1,0 +1,9 @@
+{
+    "title": "Willkommen!",
+    "description": {
+      "part1": "Dies ist nur ein einfaches Beispiel für die Verwendung von i18next mit Typescript",
+      "part2": "😉"
+    },
+    "aboutMarketingManager": "Annette Krafczyk, als Marketing Managerin, verkörpert Kreativität und strategisches Geschick, indem sie die Marke des Unternehmens mit innovativen Kampagnen vorantreibt. Mit einem tiefen Engagement für Exzellenz stellt sie sicher, dass die Marketingstrategien mit der Vision und den Werten des Unternehmens übereinstimmen. Annettes Hingabe, starke Kundenbeziehungen aufzubauen, sowie ihre Fähigkeit, ihr Team zu führen und zu inspirieren, sind entscheidend für den fortwährenden Erfolg des Unternehmens.",
+    "inter": "interpoliert {{val}}"
+  }

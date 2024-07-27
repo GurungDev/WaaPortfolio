@@ -16,6 +16,7 @@ import { PiStarThin } from "react-icons/pi";
 import { LiaHandsHelpingSolid } from "react-icons/lia";
 import { MdDesignServices } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
+import i18next from '@/utils/i18n';
 
 import {
   HoverCard,
@@ -27,8 +28,11 @@ import ServiceSolutions from "@/components/service-solutions";
 import TwoColumnParallax from "@/components/parallaxScroll/Parallaxscroll";
 import Image from "next/image";
 import Contact_us from "@/components/contact_us/Contact_us";
-
+  
 export default function Home() {
+
+ 
+
   const [isScrolled, setIsScrolled] = useState(false);
 
   const [heroSectionRef, setHeroSectionRef] = useState<HTMLElement | null>(
@@ -93,6 +97,9 @@ export default function Home() {
       ref.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+
+
 
   const slides = [
     {
@@ -289,13 +296,7 @@ export default function Home() {
           </div>
           <div className="  w-[60%]  bg-black bg-opacity-30 px-4 space-y-2 py-14 rounded-lg">
             <p className="text-center w-full h-full ">
-              Annette Krafczyk, as the Marketing Manager, exemplifies creativity
-              and strategic prowess, driving the company&apos;s brand forward
-              with innovative campaigns. With a deep commitment to excellence,
-              she ensures the marketing strategies align with the company’s
-              vision and values. Sarah&apos;s dedication to building strong
-              customer relationships and her ability to lead and inspire her
-              team are pivotal to the company&apos;s ongoing success.
+              {i18next.t('ns1:aboutMarketingManager')}
             </p>
           </div>
         </div>

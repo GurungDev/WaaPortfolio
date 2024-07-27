@@ -1,0 +1,9 @@
+{
+    "title": "Welcome!",
+    "description": {
+      "part1": "This is just a basic example of how to use i18next with typescript",
+      "part2": "😉"
+    },
+    "aboutMarketingManager": "Annette Krafczyk, as the Marketing Manager, exemplifies creativity and strategic prowess, driving the company’s brand forward with innovative campaigns. With a deep commitment to excellence, she ensures the marketing strategies align with the company’s vision and values. Sarah’s dedication to building strong customer relationships and her ability to lead and inspire her team are pivotal to the company’s ongoing success",
+    "inter": "interpolated {{val}}"
+  }

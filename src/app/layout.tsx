@@ -10,13 +10,16 @@ import 'swiper/css/thumbs';
 import '@/components/ClickableSilder/ClickableSlider.css';
 import NavbarComponent from "@/components/Navbar";
 import Footer from "@/components/Footer";
- 
+import "../utils/i18n"; 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Waa Tech Ltd.",
   description: "Waa Tech Ltd.",
 };
+
+
 
 export default function RootLayout({
   children,
