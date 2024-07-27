@@ -65,7 +65,7 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
           height: "15vh",
         }}
         autoplay={{
-          delay: 10000, // 5 seconds
+          delay: 11000, // 5 seconds
           disableOnInteraction: false,
         }}
         
@@ -96,7 +96,7 @@ const ClickablePaginationSlider = ({ title, slides }: Props) => {
         modules={[Autoplay, FreeMode, Thumbs]}
         className="swiper1 mySwiper2 "
         autoplay={{
-          delay: 10000, // 5 seconds
+          delay: 11000, // 5 seconds
           disableOnInteraction: false,
         }}
         loop={true}
