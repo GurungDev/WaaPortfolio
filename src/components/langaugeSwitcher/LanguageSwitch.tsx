@@ -1,12 +1,20 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import i18next from 'i18next';
+ import i18next from 'i18next';
 import { motion } from 'framer-motion';
 import './Switch.css';
+import { useEffect, useState } from 'react';
 
-// Initialize i18next language from localStorage
-const initialLanguage = localStorage.getItem('language') || 'en';
+// Utility function to get initial language
+const getInitialLanguage = () => {
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem('language') || 'en';
+  }
+  return 'en'; // Default language on the server side
+};
+
+// Initialize i18next language
+const initialLanguage = getInitialLanguage();
 i18next.changeLanguage(initialLanguage);
 
 const LanguageSwitcher: React.FC = () => {
@@ -26,10 +34,11 @@ const LanguageSwitcher: React.FC = () => {
   const toggleSwitch = () => {
     const newLanguage = isOn ? 'en' : 'de';
     i18next.changeLanguage(newLanguage).then(() => {
-      localStorage.setItem('language', newLanguage);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('language', newLanguage);
+      }
       setIsOn(newLanguage === 'de');
     });
-    window.location.reload();
   };
 
   const spring = {
@@ -39,7 +48,7 @@ const LanguageSwitcher: React.FC = () => {
   };
 
   return (
-    <div key={i18next.language} className="switch items-center" data-ison={isOn} onClick={toggleSwitch}>
+    <div className="switch items-center" data-ison={isOn} onClick={toggleSwitch}>
       <motion.div className="handle items-center flex justify-center text-black" layout transition={spring}>
         {isOn ? "🇩🇪" : "🇺🇸"}
       </motion.div>

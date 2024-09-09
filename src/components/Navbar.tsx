@@ -8,7 +8,7 @@ import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import { FaTiktok } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
-import LanguageSwitcher from "./langaugeSwitcher/LanguageSwitch";
+// import LanguageSwitcher from "./langaugeSwitcher/LanguageSwitch";
 
 const NavbarComponent = () => {
   const [scroll, setScroll] = useState(0);
@@ -93,7 +93,7 @@ const NavbarComponent = () => {
           <Link href="mailto:waatech2024@gmail.com">
             <IoMailOpenOutline size={24} />
           </Link>
-          <LanguageSwitcher/>
+          {/* <LanguageSwitcher /> */}
         </div>
       </div>
     </nav>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
 
 import { IoLocationSharp } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";

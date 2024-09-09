@@ -4,8 +4,7 @@ import ClickablePaginationSlider from "@/components/ClickableSilder/ClickableSli
 import HeroSectionComponent from "@/components/HeroSection";
 import i18next from '@/utils/i18n';
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { BiSolidPackage } from "react-icons/bi";
+ import { BiSolidPackage } from "react-icons/bi";
 import { FaPhoneAlt } from "react-icons/fa";
 import { LiaHandsHelpingSolid } from "react-icons/lia";
 import { MdDesignServices } from "react-icons/md";
@@ -20,6 +19,7 @@ import {
 } from "@/components/ui/hover-card";
 import Image from "next/image";
 import { FaHandHoldingHeart } from "react-icons/fa";
+import { useEffect, useState } from "react";
   
 export default function Home() {
 

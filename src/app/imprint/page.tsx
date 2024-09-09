@@ -1,6 +1,5 @@
-import Image from "next/image";
-import React from "react";
 
+import Image from "next/image";
 import { HiAcademicCap } from "react-icons/hi2";
 
 const ImprintPage = () => {
@@ -34,11 +33,12 @@ const ImprintPage = () => {
             OWNER / <br /> Project Manager
           </h3>
           <h4 className="text-center">Romisha Gurung</h4>
-          <h5 className="text-center ">
-         
-            Bachelor In Information Technology
+          <h5 className="text-center ">Bachelor In Information Technology</h5>
+          <h5 className="text-center flex gap-3">
+            {" "}
+            <HiAcademicCap size={25} />
+            London Metropolitian University
           </h5>
-          <h5 className="text-center flex gap-3" >    <HiAcademicCap size={25}/>London Metropolitian University</h5>
         </div>
       </div>
       <div className="grid gap-2 justify-center items-center text-black text-center py-10">
