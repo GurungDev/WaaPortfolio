@@ -2,32 +2,24 @@
 import BigGrid from "@/components/BigGrid";
 import ClickablePaginationSlider from "@/components/ClickableSilder/ClickableSlider";
 import HeroSectionComponent from "@/components/HeroSection";
-import SlideTwo from "@/components/SliderTwo/SliderTwo";
+import i18next from '@/utils/i18n';
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
 import { BiSolidPackage } from "react-icons/bi";
-import { FaCartShopping } from "react-icons/fa6";
-import { IoIosPeople } from "react-icons/io";
-import { LiaGlobeEuropeSolid } from "react-icons/lia";
-import { MdPeopleAlt, MdSell } from "react-icons/md";
-import { RiTeamFill } from "react-icons/ri";
-import { PiStarThin } from "react-icons/pi";
+import { FaPhoneAlt } from "react-icons/fa";
 import { LiaHandsHelpingSolid } from "react-icons/lia";
 import { MdDesignServices } from "react-icons/md";
-import { FaPhoneAlt } from "react-icons/fa";
-import i18next from '@/utils/i18n';
+import { PiStarThin } from "react-icons/pi";
+import { useInView } from "react-intersection-observer";
 
+import Contact_us from "@/components/contact_us/Contact_us";
+import ServiceSolutions from "@/components/service-solutions";
 import {
   HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
+  HoverCardTrigger
 } from "@/components/ui/hover-card";
-import { FaGifts, FaHandHoldingHeart } from "react-icons/fa";
-import ServiceSolutions from "@/components/service-solutions";
-import TwoColumnParallax from "@/components/parallaxScroll/Parallaxscroll";
 import Image from "next/image";
-import Contact_us from "@/components/contact_us/Contact_us";
+import { FaHandHoldingHeart } from "react-icons/fa";
   
 export default function Home() {
 
