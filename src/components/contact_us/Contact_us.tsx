@@ -32,7 +32,7 @@ const Contact_us: React.FC = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { firstName, lastName, subject, email, comments } = formData;
-    const mailtoLink = `mailto:waatech2024@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:contact@waa-tech-ltd.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(
       `First Name: ${firstName}\nLast Name: ${lastName}\nEmail: ${email}\nComments: ${comments}`

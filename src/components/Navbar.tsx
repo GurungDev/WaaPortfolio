@@ -90,7 +90,7 @@ const NavbarComponent = () => {
           <Link href="https://wa.me/+4915231401084">
             <FaWhatsapp size={24} />
           </Link>
-          <Link href="mailto:waatech2024@gmail.com">
+          <Link href="mailto:contact@waa-tech-ltd.com">
             <IoMailOpenOutline size={24} />
           </Link>
           {/* <LanguageSwitcher /> */}
