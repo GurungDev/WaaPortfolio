@@ -76,7 +76,7 @@ const Footer = () => {
                 <p className="">
                   <TfiEmail />
                 </p>
-                <p>waatech2024@gmail.com</p>
+                <p>contact@waa-tech-ltd.com</p>
               </div>
             </div>
           </div>
