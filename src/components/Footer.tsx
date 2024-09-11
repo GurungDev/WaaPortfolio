@@ -64,10 +64,10 @@ const Footer = () => {
               <p className="">Web Maintenance</p>
               <p className="">Web Analytics</p>
             </div>
-            <div className="flex flex-col space-y-2 w-[200px]">
+            <div className="flex flex-col space-y-2 w-[300px]">
               <h5 className="font-bold ">Contact</h5>
               <div className="flex justify-start items-center space-x-1 ">
-                <p className="mb-5">
+                <p className=" ">
                   <IoLocationSharp />{" "}
                 </p>
                 <p>Nile Street 64, London, UK</p>
