@@ -64,6 +64,8 @@ export default function RootLayout({
           </>
         )}
         <meta name="google-site-verification" content="mlkvOHuVQMBkrgKkJWoUnLMcGhEhme1G2UC4blaFwXY" />
+        <script src="https://cdn.tailwindcss.com" async></script>
+
         <title>Waa Tech Ltd.</title>
       </head>
       <body className={inter.className}>
